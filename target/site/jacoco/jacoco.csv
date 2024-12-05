@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+customer_service,com.example.customer_service,SecurityConfig,0,115,0,0,0,25,0,4,0,4
+customer_service,com.example.customer_service,CustomerServiceApplication,0,8,0,0,0,3,0,2,0,2
+customer_service,com.example.customer_service.mapper,CustomerMapper,0,79,0,0,0,21,0,3,0,3
+customer_service,com.example.customer_service.controller,CustomerController,0,357,0,68,0,69,0,42,0,8
+customer_service,com.example.customer_service.service.impl,CustomerServiceImpl,6,312,0,31,0,70,1,31,1,13
+customer_service,com.example.customer_service.exception,GlobalExceptionHandler,111,3,0,0,22,1,5,1,5,1
+customer_service,com.example.customer_service.exception,DuplicateResourceException,0,4,0,0,0,2,0,1,0,1
+customer_service,com.example.customer_service.exception,ResourceNotFoundException,0,4,0,0,0,2,0,1,0,1

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">customer_service</a> &gt; <a href="index.source.html" class="el_package">com.example.customer_service.controller</a> &gt; <span class="el_source">CustomerController.java</span></div><h1>CustomerController.java</h1><pre class="source lang-java linenums">package com.example.customer_service.controller;
+
+import com.example.customer_service.dto.CustomerDTO;
+import com.example.customer_service.dto.SearchCriteria;
+import com.example.customer_service.entity.Customer;
+import com.example.customer_service.repository.CustomerRepository;
+import com.example.customer_service.service.CustomerService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+@RestController
+@RequestMapping(&quot;api/v1/customers&quot;)
+
+public class CustomerController {
+    private final CustomerService customerService;
+    private final CustomerRepository customerRepository;
+    private static final String MESSAGE = &quot;message&quot;;
+    private static final String STATUS = &quot;status&quot;;
+    private static final String UNAUTHORIZED = &quot;Unauthorized access&quot;;
+    private static final String FORBIDDEN = &quot;Forbidden&quot;;
+    private static final String NOT_FOUND = &quot;Customer not found&quot;;
+    private static final String ENABLED = &quot;enabled&quot;;
+    private static final String DISABLED = &quot;disabled&quot;;
+
+<span class="fc" id="L29">    public CustomerController(CustomerService customerService, CustomerRepository customerRepository) {</span>
+<span class="fc" id="L30">        this.customerService = customerService;</span>
+<span class="fc" id="L31">        this.customerRepository = customerRepository;</span>
+<span class="fc" id="L32">    }</span>
+
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; buildResponse(HttpStatus status, String message) {
+<span class="fc" id="L35">        return ResponseEntity</span>
+<span class="fc" id="L36">                .status(status)</span>
+<span class="fc" id="L37">                .body(Map.of(MESSAGE, message, STATUS, status.value()));</span>
+    }
+
+    @PostMapping
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; createCustomer(@Valid @RequestBody CustomerDTO customerDTO) {
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if(!customerService.isAuthenticated()) {</span>
+<span class="fc" id="L43">            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401</span>
+        }
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (!customerService.hasPermission(&quot;CREATE_CUSTOMER&quot;)) {</span>
+<span class="fc" id="L46">            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403</span>
+        }
+
+<span class="fc bfc" id="L49" title="All 4 branches covered.">        if (customerDTO.getId() != null &amp;&amp; !customerRepository.findById(customerDTO.getId()).isPresent()) {</span>
+<span class="fc" id="L50">            return buildResponse(HttpStatus.NOT_FOUND, NOT_FOUND); //404</span>
+        }
+        // Validate Email
+<span class="fc bfc" id="L53" title="All 6 branches covered.">        if (customerDTO.getEmail() == null || customerDTO.getEmail().trim().isEmpty() || !customerDTO.getEmail().contains(&quot;@&quot;)) {</span>
+<span class="fc" id="L54">            return buildResponse(HttpStatus.BAD_REQUEST, &quot;Invalid email format&quot;); //400</span>
+        }
+
+        // Validate Phone Number
+<span class="fc bfc" id="L58" title="All 4 branches covered.">        if (customerDTO.getPhoneNumber() == null || customerDTO.getPhoneNumber().trim().isEmpty()</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">                ||!customerDTO.getPhoneNumber().matches(&quot;\\d{10}&quot;)) {</span>
+<span class="fc" id="L60">            return buildResponse(HttpStatus.BAD_REQUEST, &quot;Invalid phone number format&quot;); //400</span>
+        }
+
+        // Check for duplicate email or phone number
+<span class="fc bfc" id="L64" title="All 4 branches covered.">        if (customerService.isEmailDuplicate(customerDTO.getEmail()) || customerService.isPhoneDuplicate(customerDTO.getPhoneNumber())) {</span>
+<span class="fc" id="L65">            return buildResponse(HttpStatus.CONFLICT, &quot;Already exists&quot;);</span>
+        }
+
+
+<span class="fc" id="L69">        customerService.createCustomer(customerDTO);</span>
+<span class="fc" id="L70">        return buildResponse(HttpStatus.CREATED, &quot;Customer created successfully&quot;);</span>
+    }
+
+    @GetMapping(&quot;/&quot;)
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; getAllCustomers() {
+<span class="fc" id="L75">        List&lt;Customer&gt; customers = customerService.findAllCustomers();</span>
+<span class="fc" id="L76">        return new ResponseEntity&lt;&gt;(Map.of(&quot;customers&quot;, customers), HttpStatus.OK);</span>
+    }
+
+    @GetMapping(&quot;/{customerId}&quot;)
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; getCustomerById(@PathVariable Long customerId) {
+<span class="fc" id="L81">        Customer customer = customerService.getCustomerById(customerId);</span>
+<span class="fc" id="L82">        return new ResponseEntity&lt;&gt;(Map.of(&quot;customer&quot;, customer), HttpStatus.OK);</span>
+    }
+
+    @GetMapping(&quot;/search&quot;)
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; searchCustomers(@Valid SearchCriteria searchCriteria) {
+        // Check if the user is authenticated
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (!customerService.isAuthenticated()) {</span>
+<span class="fc" id="L89">            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401</span>
+        }
+
+
+        // Check if the user has permission to perform the search
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (!customerService.hasPermission(&quot;SEARCH_CUSTOMER&quot;)) {</span>
+<span class="fc" id="L95">            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403</span>
+        }
+<span class="fc bfc" id="L97" title="All 4 branches covered.">        if (searchCriteria.getPage() &lt; 0 || searchCriteria.getLimit() &lt;= 0) {</span>
+<span class="fc" id="L98">            return buildResponse(HttpStatus.BAD_REQUEST, &quot;Invalid search parameter&quot;); //400</span>
+        }
+        try{
+<span class="fc" id="L101">            Map&lt;String, Object&gt; result = customerService.searchCustomers(searchCriteria);</span>
+<span class="fc" id="L102">            return new ResponseEntity&lt;&gt;(result, HttpStatus.OK);</span>
+<span class="fc" id="L103">        } catch (IllegalArgumentException e) {</span>
+<span class="fc" id="L104">            return buildResponse(HttpStatus.BAD_REQUEST, &quot;Invalid search parameter&quot;); //400</span>
+<span class="fc" id="L105">        } catch(Exception e) {</span>
+<span class="fc" id="L106">            return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, &quot;Failed to search customers&quot;); //500</span>
+        }
+
+    }
+    @PatchMapping(&quot;/{customerId}&quot;)
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; updateCustomerStatus(@PathVariable Long customerId, @RequestBody Map&lt;String, Object&gt; updates) {
+        // Check if the user is authenticated
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        if (!customerService.isAuthenticated()) {</span>
+<span class="fc" id="L114">            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401</span>
+        }
+
+        // Check if the user has permission to update customer status
+<span class="fc bfc" id="L118" title="All 2 branches covered.">        if (!customerService.hasPermission(&quot;UPDATE_CUSTOMER_STATUS&quot;)) {</span>
+<span class="fc" id="L119">            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403</span>
+        }
+<span class="fc bfc" id="L121" title="All 2 branches covered.">        if(!updates.containsKey(STATUS)) {</span>
+<span class="fc" id="L122">            return buildResponse(HttpStatus.BAD_REQUEST, &quot;Status field is required&quot;); //400</span>
+        }
+
+<span class="fc" id="L125">        String status = updates.get(STATUS).toString();</span>
+<span class="fc bfc" id="L126" title="All 4 branches covered.">        if(!status.equals(ENABLED) &amp;&amp; !status.equals(DISABLED)) {</span>
+<span class="fc" id="L127">            return buildResponse(HttpStatus.BAD_REQUEST, &quot;Invalid status value&quot;); //400</span>
+        }
+<span class="fc bfc" id="L129" title="All 2 branches covered.">        if(!customerService.customerExists(customerId)) {</span>
+<span class="fc" id="L130">            return buildResponse(HttpStatus.NOT_FOUND, NOT_FOUND); //404</span>
+        }
+
+<span class="fc" id="L133">        boolean updatedStatus = customerService.updateCustomerStatus(customerId, status);</span>
+<span class="fc bfc" id="L134" title="All 2 branches covered.">        if (updatedStatus) {</span>
+<span class="fc" id="L135">            return buildResponse(HttpStatus.OK, &quot;Customer status updated successfully&quot;); //200</span>
+        } else {
+<span class="fc" id="L137">            return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, &quot;Failed to update customer status&quot;); //500</span>
+        }
+    }
+    @PutMapping(&quot;/{customerId}&quot;)
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; updateCustomer(@PathVariable Long customerId, @RequestBody Map&lt;String, Object&gt; updates){
+        // Check if the user is authenticated
+<span class="fc bfc" id="L143" title="All 2 branches covered.">        if (!customerService.isAuthenticated()) {</span>
+<span class="fc" id="L144">            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401</span>
+        }
+
+        // Check if the user has permission to update customers
+<span class="fc bfc" id="L148" title="All 2 branches covered.">        if (!customerService.hasPermission(&quot;UPDATE_CUSTOMER&quot;)) {</span>
+<span class="fc" id="L149">            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403</span>
+        }
+        // If the customer is not found, return 404
+<span class="fc bfc" id="L152" title="All 2 branches covered.">        if (!customerService.customerExists(customerId)) {</span>
+<span class="fc" id="L153">            return buildResponse(HttpStatus.NOT_FOUND, NOT_FOUND); //404</span>
+        }
+
+        // Validate Email
+<span class="fc bfc" id="L157" title="All 2 branches covered.">        if (updates.containsKey(&quot;email&quot;)) {</span>
+<span class="fc" id="L158">            String email = (String) updates.get(&quot;email&quot;);</span>
+<span class="fc bfc" id="L159" title="All 6 branches covered.">            if (email == null || email.trim().isEmpty() || !email.contains(&quot;@&quot;)) {</span>
+<span class="fc" id="L160">                return buildResponse(HttpStatus.BAD_REQUEST, &quot;Invalid email format&quot;); //400</span>
+            }
+        }
+
+        // Validate Phone Number
+<span class="fc bfc" id="L165" title="All 2 branches covered.">        if (updates.containsKey(&quot;phoneNumber&quot;)) {</span>
+<span class="fc" id="L166">            String phoneNumber = (String) updates.get(&quot;phoneNumber&quot;);</span>
+<span class="fc bfc" id="L167" title="All 6 branches covered.">            if (phoneNumber == null || phoneNumber.trim().isEmpty() || !phoneNumber.matches(&quot;\\d{10}&quot;)) {</span>
+<span class="fc" id="L168">                return buildResponse(HttpStatus.BAD_REQUEST, &quot;Invalid phone number format&quot;); //400</span>
+            }
+        }
+
+<span class="fc" id="L172">        customerService.updateCustomer(customerId, updates);</span>
+        // If customer exists, return 200 OK
+<span class="fc" id="L174">        return buildResponse(HttpStatus.OK, &quot;Customer updated successfully&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
