@@ -24,10 +24,10 @@ public class Customer {
     @Column(nullable = false, unique = true)
     private String phoneNumber;
 
+    @Column(nullable = false)
     private String address;
 
-    // Add this field if it's missing
+    @Column(nullable = false)
     private String status;
 
 }
-

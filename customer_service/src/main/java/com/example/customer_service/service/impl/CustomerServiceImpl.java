@@ -1,14 +1,11 @@
 package com.example.customer_service.service.impl;
-
-import ch.qos.logback.classic.Logger;
+import com.example.customer_service.dto.SearchCriteria;
 import com.example.customer_service.dto.CustomerDTO;
 import com.example.customer_service.entity.Customer;
 import com.example.customer_service.exception.DuplicateResourceException;
-import com.example.customer_service.mapper.CustomerMapper;
+import com.example.customer_service.mapper.CustomerMapperInterface;
 import com.example.customer_service.repository.CustomerRepository;
 import com.example.customer_service.service.CustomerService;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,14 +17,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
-    @Autowired
-    private CustomerRepository customerRepository;
 
-    @Autowired
-    private CustomerMapper customerMapper;
+    private CustomerRepository customerRepository;
+    private CustomerMapperInterface customerMapper;
+
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMapperInterface customerMapper) {
+        this.customerRepository = customerRepository;
+        this.customerMapper = customerMapper;
+    }
 
     @Override
     public CustomerDTO createCustomer(CustomerDTO customerDTO) {
@@ -45,10 +45,15 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public boolean isEmailOrPhoneDuplicate(String email, String phoneNumber) {
-        return customerRepository.findByEmail(email).isPresent() ||
-                customerRepository.findByPhoneNumber(phoneNumber).isPresent();
+    public boolean isEmailDuplicate(String email) {
+        return customerRepository.findByEmail(email).isPresent();
     }
+
+    @Override
+    public boolean isPhoneDuplicate(String phoneNumber) {
+        return customerRepository.findByPhoneNumber(phoneNumber).isPresent();
+    }
+
 
     @Override
     public CustomerDTO updateCustomer(Long customerId, Map<String, Object> updates) {
@@ -65,8 +70,8 @@ public class CustomerServiceImpl implements CustomerService {
 
                 case "email":
                     String newEmail = (String) value;
-                    if (customerRepository.findByEmail(newEmail).isPresent() &&
-                            !customer.getEmail().equals(newEmail)) {
+                    if (!customer.getEmail().equals(newEmail) &&
+                            customerRepository.findByEmail(newEmail).isPresent()) {
                         throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already in use");
                     }
                     customer.setEmail(newEmail);
@@ -74,9 +79,9 @@ public class CustomerServiceImpl implements CustomerService {
 
                 case "phoneNumber":
                     String newPhoneNumber = (String) value;
-                    if (customerRepository.findByPhoneNumber(newPhoneNumber).isPresent() &&
-                            !customer.getPhoneNumber().equals(newPhoneNumber)) {
-                        throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already in use");
+                    if (!customer.getPhoneNumber().equals(newPhoneNumber) &&
+                            customerRepository.findByPhoneNumber(newPhoneNumber).isPresent()) {
+                        throw new ResponseStatusException(HttpStatus.CONFLICT, "Phone number already in use"); //409
                     }
                     customer.setPhoneNumber(newPhoneNumber);
                     break;
@@ -123,40 +128,28 @@ public class CustomerServiceImpl implements CustomerService {
         return true;
     }
 
-    @Override
-    public Map<String, Object> searchCustomers(String name, String industry, String companySize, String email,
-                                               String phoneNumber, String address, String status, int page, int limit) {
-        final Logger log = (Logger) LoggerFactory.getLogger(CustomerServiceImpl.class);
-        log.info("Search Request: name={}, industry={}, companySize={}, email={}, phoneNumber={}, address={}, status={}, page={}, limit={}",
-                name, industry, companySize, email, phoneNumber, address, status, page, limit);
-
+    public Map<String, Object> searchCustomers(SearchCriteria criteria) {
         try {
-            Pageable pageable = PageRequest.of(page, limit);
-            log.info("Pageable: {}", pageable);
-
-            Page<Customer> customerPage = customerRepository.findCustomersByFilters(
-                    name, industry, companySize, email, phoneNumber, address, status, pageable);
-
-            log.info("Query executed successfully. Total records: {}", customerPage.getTotalElements());
+            Pageable pageable = PageRequest.of(criteria.getPage(), criteria.getLimit());
+            Page<Customer> customerPage = customerRepository.findCustomersByFilters(criteria, pageable
+            );
 
             List<CustomerDTO> customerDTOs = customerPage.getContent()
                     .stream()
                     .map(customerMapper::toDto)
-                    .collect(Collectors.toList());
+                    .toList();
 
             Map<String, Object> response = new HashMap<>();
             response.put("total_count", customerPage.getTotalElements());
-            response.put("page_count", customerPage.getTotalPages());
-            response.put("current_page", page);
+            response.put("page_count", customerPage.getTotalElements() == 0 ? 0 : customerPage.getTotalPages());
+            response.put("current_page", criteria.getPage());
             response.put("results", customerDTOs);
 
             return response;
         } catch (IllegalArgumentException e) {
-            log.error("Invalid search parameters", e);
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid search parameters");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid search parameters", e);
         } catch (Exception e) {
-            log.error("Error during searchCustomers execution", e);
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to search customers");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to search customers", e);
         }
     }
 
@@ -167,7 +160,18 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean hasPermission(String permission) {
-        return "CREATE_CUSTOMER".equals(permission) || "SEARCH_CUSTOMER".equals(permission) || "UPDATE_CUSTOMER_STATUS".equals(permission) || "UPDATE_CUSTOMER".equals(permission);
+        return "CREATE_CUSTOMER".equals(permission) || "SEARCH_CUSTOMER".equals(permission) ||
+                "UPDATE_CUSTOMER_STATUS".equals(permission) || "UPDATE_CUSTOMER".equals(permission);
+    }
+
+    @Override
+    public List<Customer> findAllCustomers() {
+        return customerRepository.findAll();
+    }
+
+    @Override
+    public Customer getCustomerById(Long customerId) {
+        return customerRepository.findById(customerId).orElse(null);
     }
 
 }

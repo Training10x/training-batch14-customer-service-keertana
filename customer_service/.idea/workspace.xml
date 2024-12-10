@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="778fc48f-9339-4f89-8185-6ab64603c946" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;padmanabhamsaikeertana&quot;
+  }
+}</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="6a2c1683-f6e2-4b9e-a612-a09aeacca471" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Training10x/training-batch14-customer-service-keertana.git&quot;,
+    &quot;accountId&quot;: &quot;6a2c1683-f6e2-4b9e-a612-a09aeacca471&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2p52KqK8J8eUR6e13ACubM0iz1U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "JUnit.CustomerMapperInterfaceTest.executor": "Run",
+    "JUnit.CustomerServiceApplicationTests.executor": "Run",
+    "JUnit.CustomerServiceApplicationTests.mainMethodTest.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldPassParentEntityCheckWhenIdIsPresent.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldPassWhenIdIsValid.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestForEmptyEmail.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestForEmptyPhoneNumber.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestForInvalidEmail.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestForNullEmail.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestWhenEmailIsEmpty.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestWhenEmailIsNull.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestWhenEmailLacksAtSymbol.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestWhenPhoneNumberIsEmpty.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestWhenPhoneNumberIsInvalid.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnBadRequestWhenPhoneNumberIsNull.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnConflictWhenEmailExists.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnConflictWhenEmailOrPhoneExists.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnConflictWhenPhoneNumberExists.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnCreateStatus.executor": "Coverage",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnForbidden.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnNotFoundForMissingParentEntity.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnNotFoundWhenIdIsInvalid.executor": "Coverage",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldReturnUnauthorized.executor": "Coverage",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldSkipIdCheckWhenIdIsNull.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.createCustomer_shouldSkipParentCheckWhenIdIsNull.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.executor": "Coverage",
+    "JUnit.CustomerServiceControllerTest.getAllCustomers_shouldReturnAllCustomers.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.getAllCustomers_shouldReturnCustomerList.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.getCustomerById_shouldReturnCustomer.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_ShouldReturnBadRequestForInvalidLimit.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnBadRequestForIllegalArgumentException.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnBadRequestForInvalidLimit.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnBadRequestForInvalidPage.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnBadRequestForInvalidSearchParameters.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnBadRequestWhenLimitIsInvalid.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnInternalServerErrorForException.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnResultsForValidCriteria.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.searchCustomers_shouldReturnUnauthorizedWhenNotAuthenticated.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnBadRequestForInvalidStatus.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnBadRequestForInvalidStatusValue.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnBadRequestWhenStatusFieldIsMissing.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnBadRequestWhenStatusIsNotDisabled.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnBadRequestWhenStatusIsNotEnabled.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnForbiddenWhenNoPermission.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnInternalServerErrorWhenUpdateFails.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnNotFoundWhenCustomerDoesNotExist.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnOkWhenStatusIsDisabled.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnOkWhenStatusIsEnabled.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnOkWhenUpdateIsSuccessful.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomerStatus_shouldReturnUnauthorizedWhenNotAuthenticated.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldPassWhenEmailIsValid.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnBadRequestWhenEmailIsEmpty.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnBadRequestWhenEmailIsNull.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnBadRequestWhenEmailLacksAtSymbol.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnBadRequestWhenPhoneNumberIsEmpty.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnBadRequestWhenPhoneNumberIsInvalid.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnBadRequestWhenPhoneNumberIsNull.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnForbiddenWhenNoPermission.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnNotFoundWhenCustomerDoesNotExist.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnOkWhenPhoneNumberIsValid.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldReturnUnauthorizedWhenNotAuthenticated.executor": "Run",
+    "JUnit.CustomerServiceControllerTest.updateCustomer_shouldSkipEmailValidationWhenEmailKeyIsMissing.executor": "Run",
+    "JUnit.CustomerServiceDuplicateResourceExceptionTest.executor": "Run",
+    "JUnit.CustomerServiceGlobalExceptionHandler.shouldHandleRuntimeException.executor": "Run",
+    "JUnit.CustomerServiceGlobalExceptionHandlerTest.executor": "Coverage",
+    "JUnit.CustomerServiceGlobalExceptionHandlerTest.shouldHandleRuntimeException.executor": "Run",
+    "JUnit.CustomerServiceImplTest.createCustomer_shouldSaveCustomerWhenEmailAndPhoneAreUnique.executor": "Run",
+    "JUnit.CustomerServiceImplTest.createCustomer_shouldThrowExceptionWhenEmailExists.executor": "Run",
+    "JUnit.CustomerServiceImplTest.createCustomer_shouldThrowExceptionWhenPhoneNumberExists.executor": "Run",
+    "JUnit.CustomerServiceImplTest.customerExists_shouldReturnTrueWhenCustomerExists.executor": "Run",
+    "JUnit.CustomerServiceImplTest.executor": "Coverage",
+    "JUnit.CustomerServiceImplTest.findAllCustomers_shouldReturnListOfCustomers.executor": "Run",
+    "JUnit.CustomerServiceImplTest.getCustomerById_shouldReturnNullWhenCustomerDoesNotExist.executor": "Run",
+    "JUnit.CustomerServiceImplTest.hasPermission_shouldReturnFalseForEmptyOrNullPermission.executor": "Run",
+    "JUnit.CustomerServiceImplTest.hasPermission_shouldReturnFalseForInvalidPermission.executor": "Run",
+    "JUnit.CustomerServiceImplTest.hasPermission_shouldReturnTrueForAllValidPermissions.executor": "Run",
+    "JUnit.CustomerServiceImplTest.hasPermission_shouldReturnTrueForValidPermission.executor": "Run",
+    "JUnit.CustomerServiceImplTest.isAuthenticated_shouldReturnTrue.executor": "Run",
+    "JUnit.CustomerServiceImplTest.isEmailDuplicate_shouldReturnTrueWhenEmailExists.executor": "Run",
+    "JUnit.CustomerServiceImplTest.isPhoneDuplicate_shouldReturnTrueWhenPhoneNumberExists.executor": "Run",
+    "JUnit.CustomerServiceImplTest.searchCustomers_shouldHandleEmptyResults.executor": "Run",
+    "JUnit.CustomerServiceImplTest.searchCustomers_shouldHandleRepositoryException.executor": "Run",
+    "JUnit.CustomerServiceImplTest.searchCustomers_shouldReturnEmptyWhenNoContent.executor": "Run",
+    "JUnit.CustomerServiceImplTest.searchCustomers_shouldReturnValidResults.executor": "Run",
+    "JUnit.CustomerServiceImplTest.searchCustomers_shouldThrowBadRequestForInvalidCriteria.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomerStatus_shouldReturnFalseWhenCustomerDoesNotExist.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomerStatus_shouldReturnTrueWhenStatusIsDisabled.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomerStatus_shouldReturnTrueWhenStatusIsEnabled.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomerStatus_shouldThrowExceptionForInvalidStatus.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldNotThrowExceptionWhenEmailIsSame.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldNotThrowExceptionWhenPhoneNumberIsSame.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldNotThrowExceptionWhenUpdatingEmailToSameValue.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldThrowExceptionForInvalidField.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldThrowExceptionWhenEmailAlreadyExists.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldThrowExceptionWhenPhoneNumberAlreadyExists.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldThrowExceptionWhenUpdatingEmailWithConflict.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldUpdateCompanySize.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldUpdateCustomerSuccessfully.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldUpdateIndustry.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldUpdateWhenEmailIsUnique.executor": "Run",
+    "JUnit.CustomerServiceImplTest.updateCustomer_shouldUpdateWhenPhoneNumberIsUnique.executor": "Run",
+    "JUnit.CustomerServiceMapperTest.executor": "Run",
+    "JUnit.CustomerServiceMapperTest.toDto_ShouldMapEntityToDto.executor": "Run",
+    "JUnit.CustomerServiceMapperTest.toEntity_ShouldMapDtoToEntity.executor": "Run",
+    "JUnit.CustomerServiceResourceNotFoundExceptionTest.executor": "Coverage",
+    "JUnit.com.example.customer_service in customer_service.executor": "Coverage",
+    "JUnit.com.example.customer_service.exception in customer_service.executor": "Coverage",
+    "JUnit.customer_service in customer_service.executor": "Coverage",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.CustomerServiceApplication.executor": "Run",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "com.codeium.enabled": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/psaik/Downloads",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.customer_service.exception" />
+      <recent name="com.example.customer_service.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CustomerServiceApplication">
+    <configuration name="CustomerMapperInterfaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.customer_service.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.customer_service.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.example.customer_service.mapper.CustomerMapperInterfaceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceImplTest.updateCustomer_shouldNotThrowExceptionWhenEmailIsSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.customer_service.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.customer_service.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.customer_service.service.CustomerServiceImplTest" />
+      <option name="METHOD_NAME" value="updateCustomer_shouldNotThrowExceptionWhenEmailIsSame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.customer_service.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.customer_service.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.example.customer_service.mapper.CustomerServiceMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.example.customer_service in customer_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.customer_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.customer_service" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="customer_service in customer_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/customer_service/src/test/java/com/example/customer_service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="customer_service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.customer_service.CustomerServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CustomerMapperInterfaceTest" />
+        <item itemvalue="JUnit.customer_service in customer_service" />
+        <item itemvalue="JUnit.com.example.customer_service in customer_service" />
+        <item itemvalue="JUnit.CustomerServiceImplTest.updateCustomer_shouldNotThrowExceptionWhenEmailIsSame" />
+        <item itemvalue="JUnit.CustomerServiceMapperTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="778fc48f-9339-4f89-8185-6ab64603c946" name="Changes" comment="" />
+      <created>1732041555153</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732041555153</updated>
+      <workItem from="1732041556339" duration="11327000" />
+      <workItem from="1732116086007" duration="990000" />
+      <workItem from="1732117124464" duration="20387000" />
+      <workItem from="1732217774909" duration="27944000" />
+      <workItem from="1732459934678" duration="29711000" />
+      <workItem from="1732635183716" duration="129630000" />
+      <workItem from="1733778233079" duration="1445000" />
+      <workItem from="1733784252201" duration="5419000" />
+      <workItem from="1733803127933" duration="790000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/featurebranch/sprint2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/customer_service$customer_service_in_customer_service.ic" NAME="customer_service in customer_service Coverage Results" MODIFIED="1733766564620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceApplicationTests.ic" NAME="CustomerServiceApplicationTests Coverage Results" MODIFIED="1733283771953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceDuplicateResourceExceptionTest.ic" NAME="CustomerServiceDuplicateResourceExceptionTest Coverage Results" MODIFIED="1733266484309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.exception.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceControllerTest_getAllCustomers_shouldReturnAllCustomers.ic" NAME="CustomerServiceControllerTest.getAllCustomers_shouldReturnAllCustomers Coverage Results" MODIFIED="1733161900582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$com_example_customer_service_in_customer_service.ic" NAME="com.example.customer_service in customer_service Coverage Results" MODIFIED="1733419316214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceControllerTest_createCustomer_shouldReturnUnauthorized.ic" NAME="CustomerServiceControllerTest.createCustomer_shouldReturnUnauthorized Coverage Results" MODIFIED="1733200852511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceControllerTest_createCustomer_shouldReturnCreateStatus.ic" NAME="CustomerServiceControllerTest.createCustomer_shouldReturnCreateStatus Coverage Results" MODIFIED="1733254095966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceControllerTest.ic" NAME="CustomerServiceControllerTest Coverage Results" MODIFIED="1733292510687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceGlobalExceptionHandlerTest.ic" NAME="CustomerServiceGlobalExceptionHandlerTest Coverage Results" MODIFIED="1733298803917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.exception.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceResourceNotFoundExceptionTest.ic" NAME="CustomerServiceResourceNotFoundExceptionTest Coverage Results" MODIFIED="1733283224131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.exception.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceMapperTest.ic" NAME="CustomerServiceMapperTest Coverage Results" MODIFIED="1733265092202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.mapper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceControllerTest_searchCustomers_shouldReturnUnauthorizedWhenNotAuthenticated.ic" NAME="CustomerServiceControllerTest.searchCustomers_shouldReturnUnauthorizedWhenNotAuthenticated Coverage Results" MODIFIED="1733246578443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$com_example_customer_service_exception_in_customer_service.ic" NAME="com.example.customer_service.exception in customer_service Coverage Results" MODIFIED="1733283248890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.exception.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceImplTest.ic" NAME="CustomerServiceImplTest Coverage Results" MODIFIED="1733298690792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/customer_service$CustomerServiceControllerTest_createCustomer_shouldReturnNotFoundWhenIdIsInvalid.ic" NAME="CustomerServiceControllerTest.createCustomer_shouldReturnNotFoundWhenIdIsInvalid Coverage Results" MODIFIED="1733206520096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.customer_service.*</FILTER>
+    </SUITE>
+  </component>
+</project>

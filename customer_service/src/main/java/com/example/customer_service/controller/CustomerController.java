@@ -1,190 +1,164 @@
 package com.example.customer_service.controller;
 
 import com.example.customer_service.dto.CustomerDTO;
+import com.example.customer_service.dto.SearchCriteria;
+import com.example.customer_service.entity.Customer;
 import com.example.customer_service.repository.CustomerRepository;
 import com.example.customer_service.service.CustomerService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 import java.util.Map;
 @RestController
 @RequestMapping("api/v1/customers")
 
 public class CustomerController {
-    @Autowired
-    private CustomerService customerService;
-    @Autowired
-    private CustomerRepository customerRepository;
+    private final CustomerService customerService;
+    private final CustomerRepository customerRepository;
+    private static final String MESSAGE = "message";
+    private static final String STATUS = "status";
+    private static final String UNAUTHORIZED = "Unauthorized access";
+    private static final String FORBIDDEN = "Forbidden";
+    private static final String NOT_FOUND = "Customer not found";
+    private static final String ENABLED = "enabled";
+    private static final String DISABLED = "disabled";
+
+    public CustomerController(CustomerService customerService, CustomerRepository customerRepository) {
+        this.customerService = customerService;
+        this.customerRepository = customerRepository;
+    }
+
+    public ResponseEntity<Map<String, Object>> buildResponse(HttpStatus status, String message) {
+        return ResponseEntity
+                .status(status)
+                .body(Map.of(MESSAGE, message, STATUS, status.value()));
+    }
 
     @PostMapping
-    public ResponseEntity<?> createCustomer(@Valid @RequestBody CustomerDTO customerDTO) {
+    public ResponseEntity<Map<String, Object>> createCustomer(@Valid @RequestBody CustomerDTO customerDTO) {
         if(!customerService.isAuthenticated()) {
-            return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of("message", "Unauthorized access", "status", 401));
+            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401
         }
         if (!customerService.hasPermission("CREATE_CUSTOMER")) {
-            return ResponseEntity
-                    .status(HttpStatus.FORBIDDEN)
-                    .body(Map.of("message", "Forbidden", "status", 403));
+            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403
         }
 
         if (customerDTO.getId() != null && !customerRepository.findById(customerDTO.getId()).isPresent()) {
-            return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("message", "Parent entity not found", "status", 404));
+            return buildResponse(HttpStatus.NOT_FOUND, NOT_FOUND); //404
         }
         // Validate Email
         if (customerDTO.getEmail() == null || customerDTO.getEmail().trim().isEmpty() || !customerDTO.getEmail().contains("@")) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of("message", "Invalid email format", "status", 400));
+            return buildResponse(HttpStatus.BAD_REQUEST, "Invalid email format"); //400
         }
 
         // Validate Phone Number
-        if (customerDTO.getPhoneNumber() == null || customerDTO.getPhoneNumber().trim().isEmpty() ||!customerDTO.getPhoneNumber().matches("\\d{10}")) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of("message", "Phone number is not valid", "status", 400));
+        if (customerDTO.getPhoneNumber() == null || customerDTO.getPhoneNumber().trim().isEmpty()
+                ||!customerDTO.getPhoneNumber().matches("\\d{10}")) {
+            return buildResponse(HttpStatus.BAD_REQUEST, "Invalid phone number format"); //400
         }
 
         // Check for duplicate email or phone number
-        if (customerService.isEmailOrPhoneDuplicate(customerDTO.getEmail(), customerDTO.getPhoneNumber())) {
-            return ResponseEntity
-                    .status(HttpStatus.CONFLICT)
-                    .body(Map.of(
-                            "message", "Email or phone number already exists",
-                            "status", 409
-                    ));
+        if (customerService.isEmailDuplicate(customerDTO.getEmail()) || customerService.isPhoneDuplicate(customerDTO.getPhoneNumber())) {
+            return buildResponse(HttpStatus.CONFLICT, "Already exists");
         }
 
-        CustomerDTO createdCustomer = customerService.createCustomer(customerDTO);
-        return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
+
+        customerService.createCustomer(customerDTO);
+        return buildResponse(HttpStatus.CREATED, "Customer created successfully");
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<Map<String, Object>> getAllCustomers() {
+        List<Customer> customers = customerService.findAllCustomers();
+        return new ResponseEntity<>(Map.of("customers", customers), HttpStatus.OK);
+    }
+
+    @GetMapping("/{customerId}")
+    public ResponseEntity<Map<String, Object>> getCustomerById(@PathVariable Long customerId) {
+        Customer customer = customerService.getCustomerById(customerId);
+        return new ResponseEntity<>(Map.of("customer", customer), HttpStatus.OK);
     }
 
     @GetMapping("/search")
-    public ResponseEntity<?> searchCustomers(
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String industry,
-            @RequestParam(required = false) String companySize,
-            @RequestParam(required = false) String email,
-            @RequestParam(required = false) String phoneNumber,
-            @RequestParam(required = false) String address,
-            @RequestParam(required = false) String status,
-            @RequestParam(required = false, defaultValue = "0") int page,
-            @RequestParam(required = false, defaultValue = "10") int limit
-    ) {
+    public ResponseEntity<Map<String, Object>> searchCustomers(@Valid SearchCriteria searchCriteria) {
         // Check if the user is authenticated
         if (!customerService.isAuthenticated()) {
-            return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of("message", "Unauthorized access", "status", 401));
+            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401
         }
+
 
         // Check if the user has permission to perform the search
         if (!customerService.hasPermission("SEARCH_CUSTOMER")) {
-            return ResponseEntity
-                    .status(HttpStatus.FORBIDDEN)
-                    .body(Map.of("message", "Forbidden", "status", 403));
+            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403
         }
-        if (page < 0 || limit <= 0) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of("message", "Invalid pagination parameters", "status", 400));
+        if (searchCriteria.getPage() < 0 || searchCriteria.getLimit() <= 0) {
+            return buildResponse(HttpStatus.BAD_REQUEST, "Invalid search parameter"); //400
         }
+
         try{
-            Map<String, Object> result = customerService.searchCustomers(name, industry, companySize, email, phoneNumber, address, status, page, limit);
+            Map<String, Object> result = customerService.searchCustomers(searchCriteria);
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of("message", e.getMessage(), "status", 400));
+            return buildResponse(HttpStatus.BAD_REQUEST, "Invalid search parameter"); //400
         } catch(Exception e) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Map.of("message", "Failed to search customers", "status", 500));
+            return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to search customers"); //500
         }
 
     }
-    @PatchMapping("/{customer_id}")
-    public ResponseEntity<?> updateCustomerStatus(@PathVariable Long customer_id, @RequestBody Map<String, Object> updates) {
+    @PatchMapping("/{customerId}")
+    public ResponseEntity<Map<String, Object>> updateCustomerStatus(@PathVariable Long customerId, @RequestBody Map<String, Object> updates) {
         // Check if the user is authenticated
         if (!customerService.isAuthenticated()) {
-            return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of("message", "Unauthorized access", "status", 401));
+            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401
         }
 
         // Check if the user has permission to update customer status
         if (!customerService.hasPermission("UPDATE_CUSTOMER_STATUS")) {
-            return ResponseEntity
-                    .status(HttpStatus.FORBIDDEN)
-                    .body(Map.of("message", "Forbidden", "status", 403));
+            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403
         }
-        if(!updates.containsKey("status")) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of("message", "Status field is required", "status", 400));
+        if(!updates.containsKey(STATUS)) {
+            return buildResponse(HttpStatus.BAD_REQUEST, "Status field is required"); //400
         }
 
-        String status = updates.get("status").toString();
-        if(!status.equals("enabled") && !status.equals("disabled")) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of("message", "Invalid status value", "status", 400));
+        String status = updates.get(STATUS).toString();
+        if(!status.equals(ENABLED) && !status.equals(DISABLED)) {
+            return buildResponse(HttpStatus.BAD_REQUEST, "Invalid status value"); //400
         }
-        if(!customerService.customerExists(customer_id)) {
-            return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("message", "Customer not found", "status", 404));
+        if(!customerService.customerExists(customerId)) {
+            return buildResponse(HttpStatus.NOT_FOUND, NOT_FOUND); //404
         }
 
-        boolean updatedStatus = customerService.updateCustomerStatus(customer_id, status);
+        boolean updatedStatus = customerService.updateCustomerStatus(customerId, status);
         if (updatedStatus) {
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(Map.of("message", "Customer status updated successfully", "status", 200));
+            return buildResponse(HttpStatus.OK, "Customer status updated successfully"); //200
         } else {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Map.of("message", "Failed to update customer status", "status", 500));
+            return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to update customer status"); //500
         }
     }
-    @PutMapping("/{customer_id}")
-    public ResponseEntity<?> updateCustomer(@PathVariable Long customer_id,@RequestBody Map<String, Object> updates){
+    @PutMapping("/{customerId}")
+    public ResponseEntity<Map<String, Object>> updateCustomer(@PathVariable Long customerId, @RequestBody Map<String, Object> updates){
         // Check if the user is authenticated
         if (!customerService.isAuthenticated()) {
-            return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of("message", "Unauthorized access", "status", 401));
+            return buildResponse(HttpStatus.UNAUTHORIZED, UNAUTHORIZED); //401
         }
 
         // Check if the user has permission to update customers
         if (!customerService.hasPermission("UPDATE_CUSTOMER")) {
-            return ResponseEntity
-                    .status(HttpStatus.FORBIDDEN)
-                    .body(Map.of("message", "Forbidden", "status", 403));
+            return buildResponse(HttpStatus.FORBIDDEN, FORBIDDEN); //403
         }
         // If the customer is not found, return 404
-        if (!customerService.customerExists(customer_id)) {
-            return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("message", "Customer not found", "status", 404));
+        if (!customerService.customerExists(customerId)) {
+            return buildResponse(HttpStatus.NOT_FOUND, NOT_FOUND); //404
         }
 
         // Validate Email
         if (updates.containsKey("email")) {
             String email = (String) updates.get("email");
             if (email == null || email.trim().isEmpty() || !email.contains("@")) {
-                return ResponseEntity
-                        .status(HttpStatus.BAD_REQUEST)
-                        .body(Map.of("message", "Invalid email format", "status", 400));
+                return buildResponse(HttpStatus.BAD_REQUEST, "Invalid email format"); //400
             }
         }
 
@@ -192,14 +166,12 @@ public class CustomerController {
         if (updates.containsKey("phoneNumber")) {
             String phoneNumber = (String) updates.get("phoneNumber");
             if (phoneNumber == null || phoneNumber.trim().isEmpty() || !phoneNumber.matches("\\d{10}")) {
-                return ResponseEntity
-                        .status(HttpStatus.BAD_REQUEST)
-                        .body(Map.of("message", "Invalid phone number format", "status", 400));
+                return buildResponse(HttpStatus.BAD_REQUEST, "Invalid phone number format"); //400
             }
         }
 
-        CustomerDTO updatedCustomer = customerService.updateCustomer(customer_id, updates);
+        customerService.updateCustomer(customerId, updates);
         // If customer exists, return 200 OK
-        return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
+        return buildResponse(HttpStatus.OK, "Customer updated successfully");
     }
 }
