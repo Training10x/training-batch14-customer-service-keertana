@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SecurityConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">customer_service</a> &gt; <a href="index.source.html" class="el_package">com.example.customer_service</a> &gt; <span class="el_source">SecurityConfig.java</span></div><h1>SecurityConfig.java</h1><pre class="source lang-java linenums">package com.example.customer_service;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableMethodSecurity(prePostEnabled = true) // Enables @PreAuthorize, @PostAuthorize, etc.
+<span class="fc" id="L17">public class SecurityConfig {</span>
+
+    private static final String ROLE_ADMIN = &quot;ADMIN&quot;;
+    private static final String ROLE_USER = &quot;USER&quot;;
+    private static final String  API_PATTERN = &quot;/api/v1/customers/**&quot;;
+    // Password encoder for secure password storage
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+<span class="fc" id="L25">        return new BCryptPasswordEncoder();</span>
+    }
+
+    // Security filter chain configuration
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+<span class="fc" id="L31">        http</span>
+<span class="fc" id="L32">                .csrf().disable() // Disable CSRF for simplicity (enable it in production)</span>
+<span class="fc" id="L33">                .authorizeHttpRequests()</span>
+                // Allow GET requests for all customers
+<span class="fc" id="L35">                .requestMatchers(HttpMethod.GET, API_PATTERN).permitAll()</span>
+                // Restrict POST requests to ADMIN role
+<span class="fc" id="L37">                .requestMatchers(HttpMethod.POST, API_PATTERN).hasRole(ROLE_ADMIN)</span>
+                // Restrict PUT requests to ADMIN and USER roles
+<span class="fc" id="L39">                .requestMatchers(HttpMethod.PUT, API_PATTERN).hasAnyRole(ROLE_ADMIN, ROLE_USER)</span>
+                // Restrict DELETE requests to ADMIN role
+<span class="fc" id="L41">                .requestMatchers(HttpMethod.DELETE, API_PATTERN).hasRole(ROLE_ADMIN)</span>
+                // Authenticate all other requests
+<span class="fc" id="L43">                .anyRequest().authenticated()</span>
+<span class="fc" id="L44">                .and()</span>
+<span class="fc" id="L45">                .httpBasic(); // Use Basic Authentication for simplicity</span>
+
+<span class="fc" id="L47">        return http.build();</span>
+    }
+
+    // In-memory authentication for demonstration purposes
+    @Bean
+    public UserDetailsService userDetailsService() {
+<span class="fc" id="L53">        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();</span>
+<span class="fc" id="L54">        manager.createUser(</span>
+<span class="fc" id="L55">                User.withUsername(&quot;admin&quot;)</span>
+<span class="fc" id="L56">                        .password(passwordEncoder().encode(&quot;admin123&quot;))</span>
+<span class="fc" id="L57">                        .roles(ROLE_ADMIN)</span>
+<span class="fc" id="L58">                        .build()</span>
+        );
+<span class="fc" id="L60">        manager.createUser(</span>
+<span class="fc" id="L61">                User.withUsername(&quot;user&quot;)</span>
+<span class="fc" id="L62">                        .password(passwordEncoder().encode(&quot;user123&quot;))</span>
+<span class="fc" id="L63">                        .roles(ROLE_USER)</span>
+<span class="fc" id="L64">                        .build()</span>
+        );
+<span class="fc" id="L66">        return manager;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
