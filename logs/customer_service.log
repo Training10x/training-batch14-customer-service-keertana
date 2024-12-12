@@ -1,0 +1,92 @@
+2024-12-10T00:01:02.474-05:00  INFO 44224 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : Starting CustomerServiceApplication using Java 23.0.1 with PID 44224 (C:\Users\psaik\Downloads\customer_service\customer_service\target\classes started by psaik in C:\Users\psaik\Downloads\customer_service)
+2024-12-10T00:01:02.484-05:00  INFO 44224 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-10T00:01:03.169-05:00  INFO 44224 --- [customer_service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-10T00:01:03.215-05:00  INFO 44224 --- [customer_service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2024-12-10T00:01:03.736-05:00  INFO 44224 --- [customer_service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-10T00:01:03.756-05:00  INFO 44224 --- [customer_service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-10T00:01:03.756-05:00  INFO 44224 --- [customer_service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-10T00:01:03.804-05:00  INFO 44224 --- [customer_service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-10T00:01:03.804-05:00  INFO 44224 --- [customer_service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1264 ms
+2024-12-10T00:01:03.927-05:00  INFO 44224 --- [customer_service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-10T00:01:03.991-05:00  INFO 44224 --- [customer_service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-10T00:01:04.027-05:00  INFO 44224 --- [customer_service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-10T00:01:04.313-05:00  INFO 44224 --- [customer_service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-10T00:01:04.340-05:00  INFO 44224 --- [customer_service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-10T00:01:04.506-05:00  INFO 44224 --- [customer_service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@41d20f06
+2024-12-10T00:01:04.508-05:00  INFO 44224 --- [customer_service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-10T00:01:04.557-05:00  WARN 44224 --- [customer_service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-10T00:01:05.299-05:00  INFO 44224 --- [customer_service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-10T00:01:05.361-05:00  INFO 44224 --- [customer_service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-10T00:01:05.566-05:00  INFO 44224 --- [customer_service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-10T00:01:06.028-05:00  WARN 44224 --- [customer_service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-10T00:01:06.115-05:00 DEBUG 44224 --- [customer_service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-10T00:01:06.175-05:00 DEBUG 44224 --- [customer_service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-10T00:01:06.208-05:00 DEBUG 44224 --- [customer_service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-10T00:01:06.243-05:00 DEBUG 44224 --- [customer_service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-10T00:01:06.343-05:00  WARN 44224 --- [customer_service] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 73d7ac44-d7bc-41c0-acd0-f2e7147bdc03
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-10T00:01:06.354-05:00  INFO 44224 --- [customer_service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-12-10T00:01:06.514-05:00  INFO 44224 --- [customer_service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-10T00:01:06.521-05:00  INFO 44224 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : Started CustomerServiceApplication in 4.531 seconds (process running for 5.242)
+2024-12-10T00:01:18.502-05:00  INFO 44224 --- [customer_service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-10T00:01:18.503-05:00  INFO 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-10T00:01:18.503-05:00 DEBUG 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-10T00:01:18.503-05:00 DEBUG 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-10T00:01:18.503-05:00 DEBUG 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-10T00:01:18.503-05:00 DEBUG 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@249f95a2
+2024-12-10T00:01:18.504-05:00 DEBUG 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@74ed11d7
+2024-12-10T00:01:18.504-05:00 DEBUG 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-10T00:01:18.504-05:00  INFO 44224 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-10T00:03:02.338-05:00  INFO 44224 --- [customer_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-10T00:03:02.341-05:00  INFO 44224 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-10T00:03:02.348-05:00  INFO 44224 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-10T00:03:11.042-05:00  INFO 16940 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : Starting CustomerServiceApplication using Java 23.0.1 with PID 16940 (C:\Users\psaik\Downloads\customer_service\customer_service\target\classes started by psaik in C:\Users\psaik\Downloads\customer_service)
+2024-12-10T00:03:11.044-05:00  INFO 16940 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-10T00:03:11.657-05:00  INFO 16940 --- [customer_service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-10T00:03:11.700-05:00  INFO 16940 --- [customer_service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-12-10T00:03:12.146-05:00  INFO 16940 --- [customer_service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-10T00:03:12.160-05:00  INFO 16940 --- [customer_service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-10T00:03:12.160-05:00  INFO 16940 --- [customer_service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-10T00:03:12.203-05:00  INFO 16940 --- [customer_service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-10T00:03:12.203-05:00  INFO 16940 --- [customer_service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1094 ms
+2024-12-10T00:03:12.350-05:00  INFO 16940 --- [customer_service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-10T00:03:12.410-05:00  INFO 16940 --- [customer_service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-10T00:03:12.438-05:00  INFO 16940 --- [customer_service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-10T00:03:12.681-05:00  INFO 16940 --- [customer_service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-10T00:03:12.705-05:00  INFO 16940 --- [customer_service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-10T00:03:12.839-05:00  INFO 16940 --- [customer_service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a4e939a
+2024-12-10T00:03:12.842-05:00  INFO 16940 --- [customer_service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-10T00:03:12.871-05:00  WARN 16940 --- [customer_service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-10T00:03:13.643-05:00  INFO 16940 --- [customer_service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-10T00:03:13.702-05:00  INFO 16940 --- [customer_service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-10T00:03:13.970-05:00  INFO 16940 --- [customer_service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-10T00:03:14.371-05:00  WARN 16940 --- [customer_service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-10T00:03:14.536-05:00  INFO 16940 --- [customer_service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-12-10T00:03:14.653-05:00 DEBUG 16940 --- [customer_service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-10T00:03:14.735-05:00 DEBUG 16940 --- [customer_service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-10T00:03:14.845-05:00 DEBUG 16940 --- [customer_service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-10T00:03:14.881-05:00 DEBUG 16940 --- [customer_service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-10T00:03:15.045-05:00  INFO 16940 --- [customer_service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-10T00:03:15.050-05:00  INFO 16940 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : Started CustomerServiceApplication in 4.438 seconds (process running for 5.083)
+2024-12-10T00:03:49.549-05:00  INFO 16940 --- [customer_service] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-10T00:03:49.549-05:00  INFO 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-10T00:03:49.550-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-10T00:03:49.550-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-10T00:03:49.550-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-10T00:03:49.551-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@49de4263
+2024-12-10T00:03:49.551-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@45ec9b22
+2024-12-10T00:03:49.551-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-10T00:03:49.551-05:00  INFO 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-10T00:03:49.704-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/customers", parameters={}
+2024-12-10T00:03:49.705-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#createCustomer(CustomerDTO)
+2024-12-10T00:03:49.804-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [CustomerDTO(id=null, name=Racheal, industry=IT, companySize=50, email=racheal@gmail.com, phoneNumber (truncated)...]
+2024-12-10T00:03:49.927-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-10T00:03:49.928-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Already exists, status=409}]
+2024-12-10T00:03:49.942-05:00 DEBUG 16940 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2024-12-10T00:06:46.392-05:00  INFO 16940 --- [customer_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-10T00:06:46.394-05:00  INFO 16940 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-10T00:06:46.398-05:00  INFO 16940 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
