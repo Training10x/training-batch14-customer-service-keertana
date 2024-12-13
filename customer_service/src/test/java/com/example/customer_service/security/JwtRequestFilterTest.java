@@ -42,7 +42,7 @@ class JwtRequestFilterTest {
         jwtRequestFilter = new JwtRequestFilter(jwtUtil, userDetailsService);
         SecurityContextHolder.clearContext(); // Clear the SecurityContext before each test
     }
-    
+
 
     @Test
     void testDoFilterInternal_WithIncompleteBearerToken() throws Exception {

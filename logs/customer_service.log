@@ -745,3 +745,224 @@
 2024-12-13T02:02:38.827-05:00  INFO 28380 --- [customer_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-12-13T02:02:38.829-05:00  INFO 28380 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-12-13T02:02:38.833-05:00  INFO 28380 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-13T11:38:51.794-05:00  INFO 33096 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : Starting CustomerServiceApplication using Java 23.0.1 with PID 33096 (C:\Users\psaik\Downloads\customer_service\customer_service\target\classes started by psaik in C:\Users\psaik\Downloads\customer_service)
+2024-12-13T11:38:51.798-05:00 DEBUG 33096 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-13T11:38:51.800-05:00  INFO 33096 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-13T11:38:52.988-05:00  INFO 33096 --- [customer_service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-13T11:38:53.078-05:00  INFO 33096 --- [customer_service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interface.
+2024-12-13T11:38:54.026-05:00  INFO 33096 --- [customer_service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-13T11:38:54.060-05:00  INFO 33096 --- [customer_service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-13T11:38:54.061-05:00  INFO 33096 --- [customer_service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-13T11:38:54.158-05:00  INFO 33096 --- [customer_service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-13T11:38:54.160-05:00  INFO 33096 --- [customer_service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2273 ms
+2024-12-13T11:38:54.286-05:00 DEBUG 33096 --- [customer_service] [main] c.e.c.security.JwtRequestFilter          : Filter 'jwtRequestFilter' configured for use
+2024-12-13T11:38:54.482-05:00  INFO 33096 --- [customer_service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-13T11:38:54.637-05:00  INFO 33096 --- [customer_service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-13T11:38:54.819-05:00  INFO 33096 --- [customer_service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-13T11:38:55.350-05:00  INFO 33096 --- [customer_service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-13T11:38:55.400-05:00  INFO 33096 --- [customer_service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-13T11:38:55.714-05:00  INFO 33096 --- [customer_service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c8ff67
+2024-12-13T11:38:55.717-05:00  INFO 33096 --- [customer_service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-13T11:38:55.812-05:00  WARN 33096 --- [customer_service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-13T11:38:57.230-05:00  INFO 33096 --- [customer_service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-13T11:38:57.358-05:00  INFO 33096 --- [customer_service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-13T11:38:57.762-05:00  INFO 33096 --- [customer_service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-13T11:38:58.475-05:00  WARN 33096 --- [customer_service] [main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.web.filter.OncePerRequestFilter.doFilter(jakarta.servlet.ServletRequest,jakarta.servlet.ServletResponse,jakarta.servlet.FilterChain) throws jakarta.servlet.ServletException,java.io.IOException] because it is marked as final, consider using interface-based JDK proxies instead.
+2024-12-13T11:38:58.477-05:00  WARN 33096 --- [customer_service] [main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.web.filter.GenericFilterBean.init(jakarta.servlet.FilterConfig) throws jakarta.servlet.ServletException] because it is marked as final, consider using interface-based JDK proxies instead.
+2024-12-13T11:38:58.556-05:00  WARN 33096 --- [customer_service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-13T11:38:58.625-05:00  INFO 33096 --- [customer_service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-13T11:38:58.626-05:00  WARN 33096 --- [customer_service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-13T11:38:58.921-05:00 DEBUG 33096 --- [customer_service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2024-12-13T11:38:59.050-05:00 DEBUG 33096 --- [customer_service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-13T11:38:59.130-05:00 DEBUG 33096 --- [customer_service] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtRequestFilter$$SpringCGLIB$$0, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-13T11:38:59.294-05:00 DEBUG 33096 --- [customer_service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-13T11:38:59.361-05:00 DEBUG 33096 --- [customer_service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-13T11:38:59.625-05:00  INFO 33096 --- [customer_service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-13T11:38:59.637-05:00  INFO 33096 --- [customer_service] [main] c.e.c.CustomerServiceApplication         : Started CustomerServiceApplication in 8.655 seconds (process running for 9.768)
+2024-12-13T11:39:12.640-05:00  INFO 33096 --- [customer_service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-13T11:39:12.642-05:00  INFO 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-13T11:39:12.643-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-13T11:39:12.644-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-13T11:39:12.645-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-13T11:39:12.650-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4a0b1701
+2024-12-13T11:39:12.652-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@156322ce
+2024-12-13T11:39:12.654-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-13T11:39:12.656-05:00  INFO 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2024-12-13T11:39:12.753-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2024-12-13T11:39:12.803-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2024-12-13T11:39:12.812-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-12-13T11:39:12.820-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.AuthController#login(AuthRequest)
+2024-12-13T11:39:13.245-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthRequest(email=testadmin@example.com, password=admin1234)]
+2024-12-13T11:39:14.271-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-12-13T11:39:14.487-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:39:14.490-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse(token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlcyI6WyJST0xF (truncated)...]
+2024-12-13T11:39:14.536-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:39:14.541-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:40:29.982-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/customers/
+2024-12-13T11:40:30.110-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:40:30.173-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/api/v1/customers/?continue to session
+2024-12-13T11:40:30.173-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2024-12-13T11:40:30.198-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /error
+2024-12-13T11:40:30.201-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:40:30.204-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/error?continue to session
+2024-12-13T11:40:30.205-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2024-12-13T11:40:41.170-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/customers/
+2024-12-13T11:40:41.340-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/customers/
+2024-12-13T11:40:41.340-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/customers/", parameters={}
+2024-12-13T11:40:41.344-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.customer_service.exception.GlobalExceptionHandler#handleGenericException(Exception)
+2024-12-13T11:40:41.354-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:40:41.355-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{details=Request method 'POST' is not supported, message=An unexpected error occurred, timestamp=202 (truncated)...]
+2024-12-13T11:40:41.364-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2024-12-13T11:40:41.365-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-12-13T11:41:50.045-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/customers
+2024-12-13T11:41:50.075-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/customers
+2024-12-13T11:41:50.076-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/customers", parameters={}
+2024-12-13T11:41:50.077-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#createCustomer(CustomerDTO)
+2024-12-13T11:41:50.103-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [CustomerDTO(id=null, name=Admin3, industry=IT, companySize=100, email=admin3@example.com, phoneNumbe (truncated)...]
+2024-12-13T11:41:50.121-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:41:50.122-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Already exists, status=409}]
+2024-12-13T11:41:50.126-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2024-12-13T11:42:04.691-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/
+2024-12-13T11:42:04.722-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/customers/
+2024-12-13T11:42:04.723-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/customers/", parameters={}
+2024-12-13T11:42:04.724-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#getAllCustomers()
+2024-12-13T11:42:04.824-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:42:04.826-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{customers=[Customer(id=2, name=Ravi, industry=HR, companySize=200, email=ravitej@gmail.cm, phoneNum (truncated)...]
+2024-12-13T11:42:04.841-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:42:14.867-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/14
+2024-12-13T11:42:14.918-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/customers/14
+2024-12-13T11:42:14.919-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/customers/14", parameters={}
+2024-12-13T11:42:14.921-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#getCustomerById(Long)
+2024-12-13T11:42:14.970-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:42:14.971-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{customer=Customer(id=14, name=Test User, industry=IT, companySize=100, email=user@example.com, phon (truncated)...]
+2024-12-13T11:42:14.975-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:42:21.595-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/search?page=0&limit=3
+2024-12-13T11:42:21.626-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:42:21.632-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/api/v1/customers/search?page=0&limit=3&continue to session
+2024-12-13T11:42:21.632-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2024-12-13T11:42:21.634-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error?page=0&limit=3
+2024-12-13T11:42:21.637-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:42:21.640-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/error?page=0&limit=3&continue to session
+2024-12-13T11:42:21.641-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2024-12-13T11:42:25.568-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/search?page=0&limit=3
+2024-12-13T11:42:25.597-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/customers/search?page=0&limit=3
+2024-12-13T11:42:25.598-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/customers/search?page=0&limit=3", parameters={masked}
+2024-12-13T11:42:25.599-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#searchCustomers(SearchCriteria)
+2024-12-13T11:42:25.956-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:42:25.958-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{total_count=18, results=[CustomerDTO(id=2, name=Ravi, industry=HR, companySize=200, email=ravitej@g (truncated)...]
+2024-12-13T11:42:25.970-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:43:00.418-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/search?name=ravi
+2024-12-13T11:43:00.453-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/customers/search?name=ravi
+2024-12-13T11:43:00.454-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/customers/search?name=ravi", parameters={masked}
+2024-12-13T11:43:00.455-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#searchCustomers(SearchCriteria)
+2024-12-13T11:43:00.496-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:43:00.497-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{total_count=0, results=[], page_count=0, current_page=0}]
+2024-12-13T11:43:00.501-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:43:11.866-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/search?id=1
+2024-12-13T11:43:11.876-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/customers/search?id=1
+2024-12-13T11:43:11.876-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/customers/search?id=1", parameters={masked}
+2024-12-13T11:43:11.876-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#searchCustomers(SearchCriteria)
+2024-12-13T11:43:11.882-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:43:11.883-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{total_count=1, results=[CustomerDTO(id=1, name=Keertana, industry=Technology, companySize=50-100, e (truncated)...]
+2024-12-13T11:43:11.884-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:43:32.557-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing PATCH /api/v1/customers/1
+2024-12-13T11:43:32.590-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured PATCH /api/v1/customers/1
+2024-12-13T11:43:32.591-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : PATCH "/api/v1/customers/1", parameters={}
+2024-12-13T11:43:32.592-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#updateCustomerStatus(Long, Map)
+2024-12-13T11:43:32.604-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{status=enabled}]
+2024-12-13T11:43:32.695-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:43:32.697-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Customer status updated successfully, status=200}]
+2024-12-13T11:43:32.701-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:43:56.865-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing PUT /api/v1/customers/14
+2024-12-13T11:43:56.897-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured PUT /api/v1/customers/14
+2024-12-13T11:43:56.898-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/customers/14", parameters={}
+2024-12-13T11:43:56.899-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#updateCustomer(Long, Map)
+2024-12-13T11:43:56.905-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{phoneNumber=1111111122}]
+2024-12-13T11:43:56.919-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:43:56.920-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Customer updated successfully, status=200}]
+2024-12-13T11:43:56.925-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:44:19.681-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2024-12-13T11:44:19.682-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2024-12-13T11:44:19.683-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-12-13T11:44:19.683-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.AuthController#login(AuthRequest)
+2024-12-13T11:44:19.685-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthRequest(email=testauser@example.com, password=user1234)]
+2024-12-13T11:44:19.977-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to find user 'testauser@example.com'
+2024-12-13T11:44:20.245-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to find user 'testauser@example.com'
+2024-12-13T11:44:20.252-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.customer_service.exception.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2024-12-13T11:44:20.254-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:44:20.255-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Bad credentials, status=500}]
+2024-12-13T11:44:20.257-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2024-12-13T11:44:20.258-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-12-13T11:44:20.259-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:44:27.206-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2024-12-13T11:44:27.208-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2024-12-13T11:44:27.209-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-12-13T11:44:27.210-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.AuthController#login(AuthRequest)
+2024-12-13T11:44:27.213-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthRequest(email=testuser@example.com, password=user1234)]
+2024-12-13T11:44:27.554-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to find user 'testuser@example.com'
+2024-12-13T11:44:27.779-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to find user 'testuser@example.com'
+2024-12-13T11:44:27.781-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.customer_service.exception.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2024-12-13T11:44:27.784-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:44:27.785-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Bad credentials, status=500}]
+2024-12-13T11:44:27.789-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2024-12-13T11:44:27.791-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-12-13T11:44:27.791-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:44:49.943-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2024-12-13T11:44:49.945-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2024-12-13T11:44:49.945-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-12-13T11:44:49.946-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.AuthController#login(AuthRequest)
+2024-12-13T11:44:49.949-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthRequest(email=testuser@example.com, password=user1234)]
+2024-12-13T11:44:50.238-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to find user 'testuser@example.com'
+2024-12-13T11:44:50.550-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to find user 'testuser@example.com'
+2024-12-13T11:44:50.551-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.customer_service.exception.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2024-12-13T11:44:50.552-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:44:50.553-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Bad credentials, status=500}]
+2024-12-13T11:44:50.555-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2024-12-13T11:44:50.556-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-12-13T11:44:50.557-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:45:55.004-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/login
+2024-12-13T11:45:55.008-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/login
+2024-12-13T11:45:55.009-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-12-13T11:45:55.010-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.AuthController#login(AuthRequest)
+2024-12-13T11:45:55.014-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthRequest(email=abc@gmail.com, password=1234)]
+2024-12-13T11:45:55.046-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-12-13T11:45:55.051-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:45:55.052-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse(token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0s (truncated)...]
+2024-12-13T11:45:55.056-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:45:55.057-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:46:13.001-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/
+2024-12-13T11:46:13.019-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.s.w.access.AccessDeniedHandlerImpl   : Responding with 403 status code
+2024-12-13T11:46:13.022-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-12-13T11:46:13.023-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-13T11:46:13.024-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/error?continue to session
+2024-12-13T11:46:13.024-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-7] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2024-12-13T11:47:01.140-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/14
+2024-12-13T11:47:01.162-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/customers/14
+2024-12-13T11:47:01.163-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/customers/14", parameters={}
+2024-12-13T11:47:01.164-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#getCustomerById(Long)
+2024-12-13T11:47:01.171-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:47:01.172-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{customer=Customer(id=14, name=Test User, industry=IT, companySize=100, email=user@example.com, phon (truncated)...]
+2024-12-13T11:47:01.174-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:47:12.314-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/v1/customers/14
+2024-12-13T11:47:12.347-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/v1/customers/14
+2024-12-13T11:47:12.348-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/customers/14", parameters={}
+2024-12-13T11:47:12.349-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#getCustomerById(Long)
+2024-12-13T11:47:12.361-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:47:12.362-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{customer=Customer(id=14, name=Test User, industry=IT, companySize=100, email=user@example.com, phon (truncated)...]
+2024-12-13T11:47:12.367-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:47:28.194-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing PATCH /api/v1/customers/1
+2024-12-13T11:47:28.227-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured PATCH /api/v1/customers/1
+2024-12-13T11:47:28.228-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : PATCH "/api/v1/customers/1", parameters={}
+2024-12-13T11:47:28.229-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#updateCustomerStatus(Long, Map)
+2024-12-13T11:47:28.232-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{status=enabled}]
+2024-12-13T11:47:28.242-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:47:28.242-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Customer status updated successfully, status=200}]
+2024-12-13T11:47:28.245-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:47:39.924-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing PUT /api/v1/customers/14
+2024-12-13T11:47:39.967-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured PUT /api/v1/customers/14
+2024-12-13T11:47:39.968-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/customers/14", parameters={}
+2024-12-13T11:47:39.969-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.customer_service.controller.CustomerController#updateCustomer(Long, Map)
+2024-12-13T11:47:39.976-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{email=user@example.com}]
+2024-12-13T11:47:39.990-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-13T11:47:39.992-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Customer updated successfully, status=200}]
+2024-12-13T11:47:40.000-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
