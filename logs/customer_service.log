@@ -966,3 +966,6 @@
 2024-12-13T11:47:39.990-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-12-13T11:47:39.992-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Customer updated successfully, status=200}]
 2024-12-13T11:47:40.000-05:00 DEBUG 33096 --- [customer_service] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-13T11:52:04.597-05:00  INFO 33096 --- [customer_service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-13T11:52:04.606-05:00  INFO 33096 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-13T11:52:04.627-05:00  INFO 33096 --- [customer_service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
