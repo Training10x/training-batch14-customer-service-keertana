@@ -1,6 +1,7 @@
 package com.example.customer_service.entity;
 
 import jakarta.persistence.*;
+
 import lombok.Data;
 @Entity
 @Data
@@ -30,4 +31,9 @@ public class Customer {
     @Column(nullable = false)
     private String status;
 
+    @Column(nullable = false)
+    private String role;
+
+    @Column(nullable = false)
+    private String password;
 }

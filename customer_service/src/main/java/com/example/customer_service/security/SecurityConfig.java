@@ -1,68 +1,69 @@
-package com.example.customer_service;
+package com.example.customer_service.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-@EnableMethodSecurity(prePostEnabled = true) // Enables @PreAuthorize, @PostAuthorize, etc.
 public class SecurityConfig {
 
-    private static final String ROLE_ADMIN = "ADMIN";
-    private static final String ROLE_USER = "USER";
-    private static final String  API_PATTERN = "/api/v1/customers/**";
-    // Password encoder for secure password storage
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    private final JwtRequestFilter jwtRequestFilter;
+    private final UserDetailsService userDetailsService;
+
+    private static final String ADMIN = "ADMIN";
+    private static final String USER = "USER";
+    private static final String API = "/api/v1/customers/**";
+
+    public SecurityConfig(@Lazy JwtRequestFilter jwtRequestFilter, UserDetailsService userDetailsService) {
+        this.jwtRequestFilter = jwtRequestFilter;
+        this.userDetailsService = userDetailsService;
     }
 
-    // Security filter chain configuration
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(); // Ensure passwords in DB are encoded
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
+        AuthenticationManagerBuilder authBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
+        authBuilder.authenticationProvider(authenticationProvider()); // Use DaoAuthenticationProvider
+        return authBuilder.build();
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf().disable() // Disable CSRF for simplicity (enable it in production)
-                .authorizeHttpRequests()
-                // Allow GET requests for all customers
-                .requestMatchers(HttpMethod.GET, API_PATTERN).permitAll()
-                // Restrict POST requests to ADMIN role
-                .requestMatchers(HttpMethod.POST, API_PATTERN).hasRole(ROLE_ADMIN)
-                // Restrict PUT requests to ADMIN and USER roles
-                .requestMatchers(HttpMethod.PUT, API_PATTERN).hasAnyRole(ROLE_ADMIN, ROLE_USER)
-                // Restrict DELETE requests to ADMIN role
-                .requestMatchers(HttpMethod.DELETE, API_PATTERN).hasRole(ROLE_ADMIN)
-                // Authenticate all other requests
-                .anyRequest().authenticated()
-                .and()
-                .httpBasic(); // Use Basic Authentication for simplicity
-
+                .csrf(csrf -> csrf.disable()) // Disable CSRF for simplicity
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, API).hasRole(ADMIN) // ADMIN can POST
+                        .requestMatchers(HttpMethod.GET, "/api/v1/customers/").hasRole(ADMIN) // ADMIN can GET all customers
+                        .requestMatchers(HttpMethod.GET, "/api/v1/customers/{customerId}").hasAnyRole(ADMIN, USER) // ADMIN can GET by ID
+                        .requestMatchers(HttpMethod.PUT, API).hasAnyRole(ADMIN, USER) // ADMIN can PUT
+                        .requestMatchers(HttpMethod.PATCH, API).hasAnyRole(ADMIN, USER) // ADMIN can PATCH
+                        .anyRequest().authenticated() // Require authentication for any other request
+                )
+                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class); // Add JWT filter
         return http.build();
     }
 
-    // In-memory authentication for demonstration purposes
+
     @Bean
-    public UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(
-                User.withUsername("admin")
-                        .password(passwordEncoder().encode("admin123"))
-                        .roles(ROLE_ADMIN)
-                        .build()
-        );
-        manager.createUser(
-                User.withUsername("user")
-                        .password(passwordEncoder().encode("user123"))
-                        .roles(ROLE_USER)
-                        .build()
-        );
-        return manager;
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(userDetailsService);
+        provider.setPasswordEncoder(passwordEncoder());
+        return provider;
     }
 }
