@@ -10,27 +10,30 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository;
     private CustomerMapperInterface customerMapper;
+    private final PasswordEncoder passwordEncoder;
 
-    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMapperInterface customerMapper) {
+
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMapperInterface customerMapper, PasswordEncoder passwordEncoder) {
         this.customerRepository = customerRepository;
         this.customerMapper = customerMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public CustomerDTO createCustomer(CustomerDTO customerDTO) {
+
+
         if (customerRepository.findByEmail(customerDTO.getEmail()).isPresent()) {
             throw new DuplicateResourceException("This Email ID already exists");
         }
@@ -40,6 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         Customer customer = customerMapper.toEntity(customerDTO);
+        customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
         Customer newCustomer = customerRepository.save(customer);
         return customerMapper.toDto(newCustomer);
     }
@@ -170,8 +174,26 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public boolean isCustomerOwnedByEmail(Long customerId, String currentUserEmail) {
+        return customerRepository.findById(customerId)
+                .map(customer -> Objects.equals(customer.getEmail(), currentUserEmail))
+                .orElse(false);
+    }
+    @Override
     public Customer getCustomerById(Long customerId) {
         return customerRepository.findById(customerId).orElse(null);
     }
 
+    public void saveCustomer(CustomerDTO customerDTO) {
+        Customer customer = new Customer();
+        customer.setEmail(customerDTO.getEmail());
+        customer.setPhoneNumber(customerDTO.getPhoneNumber());
+        customer.setAddress(customerDTO.getAddress());
+        customer.setStatus(customerDTO.getStatus());
+        customer.setRole(customerDTO.getRole());
+
+        customer.setPassword(passwordEncoder.encode(customerDTO.getPassword()));
+
+        customerRepository.save(customer);
+    }
 }

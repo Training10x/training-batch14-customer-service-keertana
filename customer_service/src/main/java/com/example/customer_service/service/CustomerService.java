@@ -6,12 +6,15 @@ import com.example.customer_service.entity.Customer;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
+
 import java.util.List;
 import java.util.Map;
 
 public interface CustomerService {
 
-    CustomerDTO createCustomer(CustomerDTO customerDTO); // Create a new customer
+
+    CustomerDTO createCustomer(CustomerDTO customerDTO);
+
 
     boolean isEmailDuplicate(@Email(message = "Invalid email format") String email);
 
@@ -33,4 +36,6 @@ public interface CustomerService {
     List<Customer> findAllCustomers();
 
     Customer getCustomerById(Long customerId);
+
+    boolean isCustomerOwnedByEmail(Long customerId, String currentUserEmail);
 }

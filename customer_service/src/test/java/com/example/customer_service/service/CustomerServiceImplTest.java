@@ -727,7 +727,21 @@ class CustomerServiceImplTest {
         assertTrue(((List<?>) result.get("results")).isEmpty(), "Results list should be empty");
         verify(customerRepository, times(1)).findCustomersByFilters(eq(criteria), any(Pageable.class));
     }
+    @Test
+    void testIsCustomerOwnedByEmail_CustomerExistsAndEmailMatches() {
+        Long customerId = 1L;
+        String currentUserEmail = "test@example.com";
 
+        Customer customer = new Customer();
+        customer.setId(customerId);
+        customer.setEmail(currentUserEmail);
+
+        when(customerRepository.findById(customerId)).thenReturn(Optional.of(customer));
+
+        boolean result = customerService.isCustomerOwnedByEmail(customerId, currentUserEmail);
+
+        assertTrue(result, "Expected to return true when customer exists and email matches");
+    }
 
 
 }
