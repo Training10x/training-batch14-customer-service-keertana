@@ -34,4 +34,12 @@ public class CustomerDTO{
     @NotBlank(message = "Status field should not be empty")
     @Pattern(regexp = "enabled|disabled", message = "Status must be 'enabled' or 'disabled'")
     private String status;
+
+    @NotBlank(message = "Role field should not be empty")
+    @Pattern(regexp = "ADMIN|USER", message = "Role must be 'ADMIN' or 'USER'")
+    private String role;
+
+    @NotBlank(message = "Password field should not be empty")
+    private String password;
+
 }
