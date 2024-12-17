@@ -1,7 +1,6 @@
 package com.example.customer_service.mapper;
 import com.example.customer_service.dto.CustomerDTO;
 import com.example.customer_service.entity.Customer;
-import com.example.customer_service.mapper.CustomerMapperInterface;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 

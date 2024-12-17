@@ -22,7 +22,7 @@ public class SecurityConfig {
 
     private static final String ADMIN = "ADMIN";
     private static final String USER = "USER";
-    private static final String API = "/api/v1/customers/**";
+    private static final String API_PREFIX = "/api/v1/customers/";
 
     public SecurityConfig(@Lazy JwtRequestFilter jwtRequestFilter, UserDetailsService userDetailsService) {
         this.jwtRequestFilter = jwtRequestFilter;
@@ -47,11 +47,11 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // Disable CSRF for simplicity
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/auth/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, API).hasRole(ADMIN) // ADMIN can POST
-                        .requestMatchers(HttpMethod.GET, "/api/v1/customers/").hasRole(ADMIN) // ADMIN can GET all customers
-                        .requestMatchers(HttpMethod.GET, "/api/v1/customers/{customerId}").hasAnyRole(ADMIN, USER) // ADMIN can GET by ID
-                        .requestMatchers(HttpMethod.PUT, API).hasAnyRole(ADMIN, USER) // ADMIN can PUT
-                        .requestMatchers(HttpMethod.PATCH, API).hasAnyRole(ADMIN, USER) // ADMIN can PATCH
+                        .requestMatchers(HttpMethod.POST, "/api/v1/customers/**").hasRole("ADMIN") // ADMIN can POST
+                        .requestMatchers(HttpMethod.GET, "/api/v1/customers/").hasRole("ADMIN") // ADMIN can GET all customers
+                        .requestMatchers(HttpMethod.GET, "/api/v1/customers/{customerId}").hasAnyRole("ADMIN", "USER") // ADMIN can GET by ID
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/customers/**").hasAnyRole("ADMIN", "USER") // ADMIN can PUT
+                        .requestMatchers(HttpMethod.PATCH, "/api/v1/customers/**").hasAnyRole("ADMIN", "USER") // ADMIN can PATCH
                         .anyRequest().authenticated() // Require authentication for any other request
                 )
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class); // Add JWT filter
