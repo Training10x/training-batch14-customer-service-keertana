@@ -44,16 +44,18 @@ jobs:
         run: mvn test jacoco:report
 
       - name: Build & Push Docker Image
+        working-directory: customer_service
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: keertanapadmanabham/customer-service-image
           tags: latest
           registry: docker.io
-          dockerfile: customer_service/Dockerfile
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Publish to Maven Repository
+        working-directory: customer_service
         run: mvn deploy
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
