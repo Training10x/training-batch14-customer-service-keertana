@@ -26,25 +26,25 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        working-directory: customer_service
+        working-directory: customer_service/customer_service
         run: mvn clean install
 
       - name: Run Tests
-        working-directory: customer_service
+        working-directory: customer_service/customer_service
         run: mvn test
 
       - name: Code Quality Analysis
-        working-directory: customer_service
+        working-directory: customer_service/customer_service
         run: mvn sonar:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Generate Code Coverage Report
-        working-directory: customer_service
+        working-directory: customer_service/customer_service
         run: mvn test jacoco:report
 
       - name: Build & Push Docker Image
-        working-directory: customer_service
+        working-directory: customer_service/customer_service
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: keertanapadmanabham/customer-service-image
@@ -55,7 +55,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Publish to Maven Repository
-        working-directory: customer_service
+        working-directory: customer_service/customer_service
         run: mvn deploy
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}

@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778fc48f-9339-4f89-8185-6ab64603c946" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.github/workflows/maven.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="778fc48f-9339-4f89-8185-6ab64603c946" name="Changes" comment="Dockfile added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.Dockerfile.executor": "Run",
     "HTTP Request.generated-requests | #1.executor": "Run",
     "JUnit.CustomerMapperInterfaceTest.executor": "Run",
     "JUnit.CustomerServiceApplicationTests.executor": "Run",
@@ -177,6 +174,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "Spring Boot.CustomerServiceApplication.executor": "Run",
     "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
     "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
@@ -204,7 +202,7 @@
       <recent name="com.example.customer_service.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.CustomerServiceApplication">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="CustomerMapperInterfaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer_service" />
       <extension name="coverage">
@@ -251,20 +249,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example.customer_service in customer_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="customer_service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.customer_service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.customer_service" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="customer_service in customer_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer_service" />
       <option name="TEST_OBJECT" value="directory" />
@@ -280,13 +264,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="JUnit.CustomerServiceMapperTest" />
         <item itemvalue="JUnit.CustomerServiceImplTest.updateCustomer_shouldNotThrowExceptionWhenEmailIsSame" />
         <item itemvalue="JUnit.CustomerMapperInterfaceTest" />
         <item itemvalue="JUnit.customer_service in customer_service" />
-        <item itemvalue="JUnit.com.example.customer_service in customer_service" />
       </list>
     </recent_temporary>
   </component>
@@ -315,8 +311,17 @@
       <workItem from="1733778233079" duration="1445000" />
       <workItem from="1733784252201" duration="5419000" />
       <workItem from="1733803127933" duration="790000" />
-      <workItem from="1734978225550" duration="1030000" />
+      <workItem from="1734978225550" duration="4799000" />
     </task>
+    <task id="LOCAL-00001" summary="Dockfile added">
+      <option name="closed" value="true" />
+      <created>1734980362244</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734980362244</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +349,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dockfile added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockfile added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/customer_service$customer_service_in_customer_service.ic" NAME="customer_service in customer_service Coverage Results" MODIFIED="1733766564620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
