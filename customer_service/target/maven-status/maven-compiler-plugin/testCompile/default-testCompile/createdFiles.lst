@@ -1,7 +1,12 @@
 com\example\customer_service\exception\CustomerServiceDuplicateResourceExceptionTest.class
+com\example\customer_service\security\JwtRequestFilterTest.class
 com\example\customer_service\controller\CustomerServiceControllerTest.class
 com\example\customer_service\service\CustomerServiceImplTest.class
+com\example\customer_service\mapper\CustomerServiceMapperInterfaceTest.class
 com\example\customer_service\exception\CustomerServiceGlobalExceptionHandlerTest.class
 com\example\customer_service\exception\CustomerServiceResourceNotFoundExceptionTest.class
-com\example\customer_service\mapper\CustomerServiceMapperTest.class
+com\example\customer_service\dto\AuthResponseTest.class
+com\example\customer_service\dto\AuthRequestTest.class
 com\example\customer_service\CustomerServiceApplicationTests.class
+com\example\customer_service\controller\AuthControllerTest$TestSecurityConfig.class
+com\example\customer_service\controller\AuthControllerTest.class

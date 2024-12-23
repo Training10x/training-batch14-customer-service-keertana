@@ -1,4 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: com.example.customer_service.service.CustomerServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.368 s -- in com.example.customer_service.service.CustomerServiceImplTest
+Tests run: 34, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.199 s <<< FAILURE! -- in com.example.customer_service.service.CustomerServiceImplTest
+com.example.customer_service.service.CustomerServiceImplTest.createCustomer_shouldSaveCustomerWhenEmailAndPhoneAreUnique -- Time elapsed: 0.082 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.springframework.security.crypto.password.PasswordEncoder.encode(java.lang.CharSequence)" because "this.passwordEncoder" is null
+	at com.example.customer_service.service.impl.CustomerServiceImpl.createCustomer(CustomerServiceImpl.java:46)
+	at com.example.customer_service.service.CustomerServiceImplTest.createCustomer_shouldSaveCustomerWhenEmailAndPhoneAreUnique(CustomerServiceImplTest.java:112)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.example.customer_service.service.CustomerServiceImplTest.testIsCustomerOwnedByEmail_CustomerExistsAndEmailMatches -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected to return true when customer exists and email matches ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at com.example.customer_service.service.CustomerServiceImplTest.testIsCustomerOwnedByEmail_CustomerExistsAndEmailMatches(CustomerServiceImplTest.java:743)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

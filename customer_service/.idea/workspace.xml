@@ -4,42 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9e9ad5-c584-4748-8f0c-b60e4b13863a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/customer_service/config/KafkaProducerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/customer_service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2b9e9ad5-c584-4748-8f0c-b60e4b13863a" name="Changes" comment="Dockfile added">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/customer_service.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/customer_service.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/customer_service.log.2024-12-09.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/customer_service.log.2024-12-10.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/customer_service.log.2024-12-12.0.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/customer_service/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/customer_service/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/customer_service/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/customer_service/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/customer_service/mapper/CustomerMapperInterfaceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/customer_service/mapper/CustomerMapperInterfaceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/controller/AuthControllerTest$TestSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/controller/AuthControllerTest$TestSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/controller/AuthControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/controller/AuthControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/mapper/CustomerServiceMapperInterfaceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/mapper/CustomerServiceMapperInterfaceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/security/JwtRequestFilterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/customer_service/security/JwtRequestFilterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/customer_service.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/customer_service.log.2024-12-09.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/customer_service.log.2024-12-10.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/customer_service.log.2024-12-11.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/customer_service.log.2024-12-12.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mvnw.cmd" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$/.." value="feature4" />
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
@@ -84,6 +53,7 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2qM5mAGOWygfmnIqaTKBkhlvANi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -114,6 +84,36 @@
   }
 }</component>
   <component name="RunManager" selected="Spring Boot.CustomerServiceApplication">
+    <configuration name="CustomerMapperInterfaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.customer_service.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.customer_service.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.example.customer_service.mapper.CustomerMapperInterfaceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.customer_service.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.customer_service.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.example.customer_service.mapper.CustomerServiceMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="com.example.customer_service in customer_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customer_service" />
       <extension name="coverage">
@@ -124,6 +124,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.customer_service" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="customer_service in customer_service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer_service" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/customer_service/src/test/java/com/example/customer_service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,6 +159,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.CandidateApplication" />
+        <item itemvalue="JUnit.CustomerServiceMapperTest" />
+        <item itemvalue="JUnit.CustomerMapperInterfaceTest" />
+        <item itemvalue="JUnit.customer_service in customer_service" />
         <item itemvalue="JUnit.com.example.customer_service in customer_service" />
       </list>
     </recent_temporary>
@@ -182,6 +193,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dockfile added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockfile added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/customer_service$com_example_customer_service_in_customer_service.ic" NAME="com.example.customer_service in customer_service Coverage Results" MODIFIED="1734459982769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

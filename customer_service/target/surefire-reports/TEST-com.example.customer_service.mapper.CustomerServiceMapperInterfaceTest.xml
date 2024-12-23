@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.customer_service.CustomerServiceApplicationTests" time="8.598" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.customer_service.mapper.CustomerServiceMapperInterfaceTest" time="0.006" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -69,92 +69,6 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[customer_service] "/>
   </properties>
-  <testcase name="mainMethodTest" classname="com.example.customer_service.CustomerServiceApplicationTests" time="1.38">
-    <system-out><![CDATA[2024-12-23T16:10:30.234-05:00  INFO 31456 --- [customer_service] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.customer_service.CustomerServiceApplicationTests]: CustomerServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-12-23T16:10:30.291-05:00  INFO 31456 --- [customer_service] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.customer_service.CustomerServiceApplication for test class com.example.customer_service.CustomerServiceApplicationTests
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.3.5)
-
-2024-12-23T16:10:30.347-05:00  INFO 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplicationTests    : Starting CustomerServiceApplicationTests using Java 21.0.1 with PID 31456 (started by psaik in C:\Users\psaik\customer_service\customer_service)
-2024-12-23T16:10:30.347-05:00 DEBUG 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplicationTests    : Running with Spring Boot v3.3.5, Spring v6.1.14
-2024-12-23T16:10:30.348-05:00  INFO 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2024-12-23T16:10:30.354-05:00 DEBUG 31456 --- [customer_service] [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@431c2020
-2024-12-23T16:10:30.966-05:00  INFO 31456 --- [customer_service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-23T16:10:31.081-05:00  INFO 31456 --- [customer_service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 1 JPA repository interface.
-2024-12-23T16:10:31.743-05:00  INFO 31456 --- [customer_service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-23T16:10:31.907-05:00  INFO 31456 --- [customer_service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-12-23T16:10:31.987-05:00  INFO 31456 --- [customer_service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-23T16:10:32.410-05:00  INFO 31456 --- [customer_service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-23T16:10:32.491-05:00  INFO 31456 --- [customer_service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-12-23T16:10:32.924-05:00  INFO 31456 --- [customer_service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c56ca37
-2024-12-23T16:10:32.930-05:00  INFO 31456 --- [customer_service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-12-23T16:10:33.005-05:00  WARN 31456 --- [customer_service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-12-23T16:10:34.826-05:00  INFO 31456 --- [customer_service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-23T16:10:34.933-05:00  INFO 31456 --- [customer_service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-23T16:10:35.523-05:00  INFO 31456 --- [customer_service] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-23T16:10:36.633-05:00  WARN 31456 --- [customer_service] [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.web.filter.OncePerRequestFilter.doFilter(jakarta.servlet.ServletRequest,jakarta.servlet.ServletResponse,jakarta.servlet.FilterChain) throws jakarta.servlet.ServletException,java.io.IOException] because it is marked as final, consider using interface-based JDK proxies instead.
-2024-12-23T16:10:36.634-05:00  WARN 31456 --- [customer_service] [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.web.filter.GenericFilterBean.init(jakarta.servlet.FilterConfig) throws jakarta.servlet.ServletException] because it is marked as final, consider using interface-based JDK proxies instead.
-2024-12-23T16:10:36.755-05:00  WARN 31456 --- [customer_service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-23T16:10:36.786-05:00  INFO 31456 --- [customer_service] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-23T16:10:36.786-05:00  WARN 31456 --- [customer_service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-23T16:10:36.830-05:00 DEBUG 31456 --- [customer_service] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
-2024-12-23T16:10:36.892-05:00 DEBUG 31456 --- [customer_service] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-12-23T16:10:36.926-05:00 DEBUG 31456 --- [customer_service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtRequestFilter$$SpringCGLIB$$0, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2024-12-23T16:10:37.141-05:00 DEBUG 31456 --- [customer_service] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-12-23T16:10:37.148-05:00 DEBUG 31456 --- [customer_service] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-12-23T16:10:37.439-05:00  INFO 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplicationTests    : Started CustomerServiceApplicationTests in 7.136 seconds (process running for 18.296)
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.3.5)
-
-2024-12-23T16:10:37.494-05:00  INFO 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplication         : Starting CustomerServiceApplication using Java 21.0.1 with PID 31456 (started by psaik in C:\Users\psaik\customer_service\customer_service)
-2024-12-23T16:10:37.495-05:00 DEBUG 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplication         : Running with Spring Boot v3.3.5, Spring v6.1.14
-2024-12-23T16:10:37.495-05:00  INFO 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-12-23T16:10:37.692-05:00  INFO 31456 --- [customer_service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-23T16:10:37.708-05:00  INFO 31456 --- [customer_service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
-2024-12-23T16:10:38.007-05:00  INFO 31456 --- [customer_service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-12-23T16:10:38.038-05:00  INFO 31456 --- [customer_service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-23T16:10:38.038-05:00  INFO 31456 --- [customer_service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-12-23T16:10:38.125-05:00  INFO 31456 --- [customer_service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-23T16:10:38.126-05:00  INFO 31456 --- [customer_service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 629 ms
-2024-12-23T16:10:38.209-05:00 DEBUG 31456 --- [customer_service] [           main] c.e.c.security.JwtRequestFilter          : Filter 'jwtRequestFilter' configured for use
-2024-12-23T16:10:38.260-05:00  INFO 31456 --- [customer_service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-23T16:10:38.263-05:00  INFO 31456 --- [customer_service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-23T16:10:38.271-05:00  INFO 31456 --- [customer_service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-23T16:10:38.273-05:00  INFO 31456 --- [customer_service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-12-23T16:10:38.327-05:00  INFO 31456 --- [customer_service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@6a7db71c
-2024-12-23T16:10:38.327-05:00  INFO 31456 --- [customer_service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-12-23T16:10:38.338-05:00  WARN 31456 --- [customer_service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-12-23T16:10:38.383-05:00  INFO 31456 --- [customer_service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-23T16:10:38.419-05:00  INFO 31456 --- [customer_service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-23T16:10:38.542-05:00  WARN 31456 --- [customer_service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-23T16:10:38.563-05:00  INFO 31456 --- [customer_service] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-23T16:10:38.564-05:00  WARN 31456 --- [customer_service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-23T16:10:38.617-05:00 DEBUG 31456 --- [customer_service] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
-2024-12-23T16:10:38.662-05:00 DEBUG 31456 --- [customer_service] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-12-23T16:10:38.666-05:00 DEBUG 31456 --- [customer_service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtRequestFilter$$SpringCGLIB$$0, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2024-12-23T16:10:38.700-05:00 DEBUG 31456 --- [customer_service] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-12-23T16:10:38.707-05:00 DEBUG 31456 --- [customer_service] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-12-23T16:10:38.814-05:00  INFO 31456 --- [customer_service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-12-23T16:10:38.818-05:00  INFO 31456 --- [customer_service] [           main] c.e.c.CustomerServiceApplication         : Started CustomerServiceApplication in 1.365 seconds (process running for 19.674)
-main method test
-]]></system-out>
-  </testcase>
-  <testcase name="contextLoads" classname="com.example.customer_service.CustomerServiceApplicationTests" time="0.003">
-    <system-out><![CDATA[context load test
-]]></system-out>
-  </testcase>
+  <testcase name="testEntityToDtoMapping" classname="com.example.customer_service.mapper.CustomerServiceMapperInterfaceTest" time="0.002"/>
+  <testcase name="testDtoToEntityMapping" classname="com.example.customer_service.mapper.CustomerServiceMapperInterfaceTest" time="0.0"/>
 </testsuite>
