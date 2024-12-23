@@ -118,6 +118,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
 			<!-- Add JaCoCo Maven Plugin -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -140,6 +141,8 @@
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
+		<finalName>customer-service-image</finalName>
 	</build>
 </project>
