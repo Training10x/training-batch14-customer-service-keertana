@@ -5,6 +5,7 @@ import com.example.customer_service.dto.SearchCriteria;
 import com.example.customer_service.entity.Customer;
 import com.example.customer_service.repository.CustomerRepository;
 import com.example.customer_service.service.CustomerService;
+import com.example.customer_service.service.impl.KafkaProducerService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,9 @@ import java.util.Map;
 public class CustomerController {
     private final CustomerService customerService;
     private final CustomerRepository customerRepository;
+    private final KafkaProducerService producerService;
+
+
     private static final String MESSAGE = "message";
     private static final String STATUS = "status";
     private static final String UNAUTHORIZED = "Unauthorized access";
@@ -26,9 +30,12 @@ public class CustomerController {
     private static final String ENABLED = "enabled";
     private static final String DISABLED = "disabled";
 
-    public CustomerController(CustomerService customerService, CustomerRepository customerRepository) {
+    public CustomerController(CustomerService customerService,
+                              CustomerRepository customerRepository,
+                              KafkaProducerService producerService) {
         this.customerService = customerService;
         this.customerRepository = customerRepository;
+        this.producerService = producerService;
     }
 
     public ResponseEntity<Map<String, Object>> buildResponse(HttpStatus status, String message) {
@@ -173,5 +180,12 @@ public class CustomerController {
         customerService.updateCustomer(customerId, updates);
         // If customer exists, return 200 OK
         return buildResponse(HttpStatus.OK, "Customer updated successfully");
+    }
+
+    @PostMapping("/send")
+    public ResponseEntity<String> sendMessage(@RequestParam String message) {
+        String topic = "candidate-topic"; // Kafka topic name
+        producerService.sendMessage(topic, message);
+        return ResponseEntity.ok("Message sent to Kafka topic: " + topic + " | Message: " + message);
     }
 }
