@@ -30,14 +30,17 @@ jobs:
         run: mvn clean install
 
       - name: Run Tests
+        working-directory: customer_service
         run: mvn test
 
       - name: Code Quality Analysis
+        working-directory: customer_service
         run: mvn sonar:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Generate Code Coverage Report
+        working-directory: customer_service
         run: mvn test jacoco:report
 
       - name: Build & Push Docker Image
