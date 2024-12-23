@@ -26,6 +26,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
+        working-directory: customer_service
         run: mvn clean install
 
       - name: Run Tests
