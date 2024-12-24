@@ -16,8 +16,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
+      # Set up Java JDK 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -25,20 +28,24 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      # Build the project using Maven
       - name: Build with Maven
         working-directory: customer_service/customer_service
         run: mvn clean install
 
+      # Code quality analysis with SonarQube
       - name: Code Quality Analysis
         working-directory: customer_service/customer_service
         run: mvn sonar:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      # Generate code coverage report
       - name: Generate Code Coverage Report
         working-directory: customer_service/customer_service
         run: mvn test jacoco:report
 
+      # Build and push Docker image
       - name: Build & Push Docker Image
         working-directory: customer_service/customer_service
         uses: mr-smithers-excellent/docker-build-push@v5
@@ -50,6 +57,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      # Publish the project to Maven repository
       - name: Publish to Maven Repository
         working-directory: customer_service/customer_service
         run: mvn deploy
