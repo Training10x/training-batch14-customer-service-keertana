@@ -34,8 +34,12 @@ jobs:
           POSTGRES_PASSWORD: Kittu@542
           POSTGRES_DB: customer_service_db
         ports:
-          - 5433:5433
-        options: --health-cmd="pg_isready -U postgres" --health-interval=10s --health-timeout=5s --health-retries=5
+          - 5433:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
       - name: Checkout Code
