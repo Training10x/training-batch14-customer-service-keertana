@@ -2,9 +2,19 @@ name: Customer Service CI/CD Workflow
 
 on:
   push:
-    branches: ["main", "feature/sprint4","branchdev","releasebranch","hotfix"]
+    branches:
+      - main
+      - feature/*
+      - branchdev
+      - releasebranch
+      - hotfix
   pull_request:
-    branches: ["main", "feature/sprint4","branchdev","releasebranch","hotfix"]
+    branches:
+      - main
+      - feature/*
+      - branchdev
+      - releasebranch
+      - hotfix
   workflow_dispatch:
 
 
