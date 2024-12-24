@@ -29,10 +29,6 @@ jobs:
         working-directory: customer_service/customer_service
         run: mvn clean install
 
-      - name: Run Tests
-        working-directory: customer_service/customer_service
-        run: mvn test
-
       - name: Code Quality Analysis
         working-directory: customer_service/customer_service
         run: mvn sonar:sonar
