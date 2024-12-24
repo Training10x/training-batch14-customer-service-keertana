@@ -1,0 +1,12 @@
+com.example.customer_service.controller.CustomerController#createCustomer(Lcom/example/customer_service/dto/CustomerDTO;)Lorg/springframework/http/ResponseEntity;
+false
+f155b0a7267351f7223a4f949ded1426
+==
+!unknownMethod! !unknownMethod!
+buildResponse com.example.customer_service.controller.CustomerController#buildResponse(Lorg/springframework/http/HttpStatus;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;
+createCustomer com.example.customer_service.service.CustomerService#createCustomer(Lcom/example/customer_service/dto/CustomerDTO;)Lcom/example/customer_service/dto/CustomerDTO;
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+hasPermission com.example.customer_service.service.CustomerService#hasPermission(Ljava/lang/String;)Z
+isAuthenticated com.example.customer_service.service.CustomerService#isAuthenticated()Z
+isEmailDuplicate com.example.customer_service.service.CustomerService#isEmailDuplicate(Ljava/lang/String;)Z
+isPhoneDuplicate com.example.customer_service.service.CustomerService#isPhoneDuplicate(Ljava/lang/String;)Z

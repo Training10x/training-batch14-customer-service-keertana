@@ -1,0 +1,6 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#isPhoneDuplicate(Ljava/lang/String;)Z
+false
+d8348ba0f34ca743e2330bc23f69adc2
+java.util.Optional#isPresent()Z
+==
+findByPhoneNumber com.example.customer_service.repository.CustomerRepository#findByPhoneNumber(Ljava/lang/String;)Ljava/util/Optional;

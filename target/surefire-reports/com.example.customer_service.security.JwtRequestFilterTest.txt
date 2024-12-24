@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.customer_service.security.JwtRequestFilterTest
 -------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.548 s -- in com.example.customer_service.security.JwtRequestFilterTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.530 s -- in com.example.customer_service.security.JwtRequestFilterTest

@@ -1,0 +1,4 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#hasPermission(Ljava/lang/String;)Z
+false
+f18b2fee436987852885bad30fa0a011
+java.lang.String#equals(Ljava/lang/Object;)Z

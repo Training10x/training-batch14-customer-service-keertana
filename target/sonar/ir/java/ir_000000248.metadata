@@ -1,0 +1,6 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#getCustomerById(Ljava/lang/Long;)Lcom/example/customer_service/entity/Customer;
+false
+428f47257331c2a4606e0f37bb0790f9
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;

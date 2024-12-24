@@ -1,0 +1,7 @@
+com.example.customer_service.config.KafkaProducerConfig#kafkaTemplate()Lorg/springframework/kafka/core/KafkaTemplate;
+false
+68059908d0ba86054ed42e48c879de8a
+org.springframework.kafka.core.KafkaTemplate#<init>(Lorg/springframework/kafka/core/ProducerFactory;)V
+org.springframework.kafka.core.KafkaTemplate#instance-init#
+==
+producerFactory com.example.customer_service.config.KafkaProducerConfig#producerFactory()Lorg/springframework/kafka/core/ProducerFactory;

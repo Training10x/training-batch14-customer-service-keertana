@@ -1,0 +1,7 @@
+com.example.customer_service.config.KafkaProducerConfig#producerFactory()Lorg/springframework/kafka/core/ProducerFactory;
+false
+a823e40f950a0036bba7dd3dafc371ac
+org.springframework.kafka.core.DefaultKafkaProducerFactory#<init>(Ljava/util/Map;)V
+org.springframework.kafka.core.DefaultKafkaProducerFactory#instance-init#
+==
+producerConfig com.example.customer_service.config.KafkaProducerConfig#producerConfig()Ljava/util/Map;

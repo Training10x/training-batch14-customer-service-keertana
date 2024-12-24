@@ -1,0 +1,9 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#updateCustomer(Ljava/lang/Long;Ljava/util/Map;)Lcom/example/customer_service/dto/CustomerDTO;
+false
+ca178443ddfb363b356e2ab61e897dc3
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+forEach java.util.Map#forEach(Ljava/util/function/BiConsumer;)V
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+toDto com.example.customer_service.mapper.CustomerMapperInterface#toDto(Lcom/example/customer_service/entity/Customer;)Lcom/example/customer_service/dto/CustomerDTO;

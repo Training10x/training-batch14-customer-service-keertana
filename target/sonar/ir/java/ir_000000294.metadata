@@ -1,0 +1,13 @@
+com.example.customer_service.controller.CustomerController#updateCustomerStatus(Ljava/lang/Long;Ljava/util/Map;)Lorg/springframework/http/ResponseEntity;
+false
+7d20323b3b98e70a2a1e232139260046
+java.lang.String#equals(Ljava/lang/Object;)Z
+==
+buildResponse com.example.customer_service.controller.CustomerController#buildResponse(Lorg/springframework/http/HttpStatus;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;
+containsKey java.util.Map#containsKey(Ljava/lang/Object;)Z
+customerExists com.example.customer_service.service.CustomerService#customerExists(Ljava/lang/Long;)Z
+get java.util.Map#get(Ljava/lang/Object;)Ljava/lang/Object;
+hasPermission com.example.customer_service.service.CustomerService#hasPermission(Ljava/lang/String;)Z
+isAuthenticated com.example.customer_service.service.CustomerService#isAuthenticated()Z
+toString java.lang.Object#toString()Ljava/lang/String;
+updateCustomerStatus com.example.customer_service.service.CustomerService#updateCustomerStatus(Ljava/lang/Long;Ljava/lang/String;)Z

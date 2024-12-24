@@ -1,0 +1,6 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#isEmailDuplicate(Ljava/lang/String;)Z
+false
+886351a79ad2170e6465d64267902a4c
+java.util.Optional#isPresent()Z
+==
+findByEmail com.example.customer_service.repository.CustomerRepository#findByEmail(Ljava/lang/String;)Ljava/util/Optional;

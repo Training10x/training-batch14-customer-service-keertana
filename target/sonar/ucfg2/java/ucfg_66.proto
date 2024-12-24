@@ -1,0 +1,16 @@
+
+G__sonar_lambda_6$com.example.customer_service.controller.AuthControllers
+iC:/Users/psaik/customer_service/src/main/java/com/example/customer_service/controller/AuthController.java" "(/"1*ó
+1" "( ¼¹
+" "(/
+%10java.lang.String"Sorg.springframework.security.core.GrantedAuthority#getAuthority()Ljava/lang/String;*/
+
+__unknown_file (
+
+auth	!capture!2getAuthority()"%
+" "(/
+
+%10java.lang.String:
+" "(
+auth	!capture!B
+java.util.function.Function

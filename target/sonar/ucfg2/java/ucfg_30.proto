@@ -1,0 +1,16 @@
+
+Lcom.example.customer_service.dto.AuthRequest#getPassword()Ljava/lang/String;i
+_C:/Users/psaik/customer_service/src/main/java/com/example/customer_service/dto/AuthRequest.java ("1*½
+1 (‡
+„
+ (
+%0java.lang.String"__id*Z
+
+__unknown_file (>*<.
+,com.example.customer_service.dto.AuthRequest"
+
+password"$
+ (
+
+%0java.lang.StringB0.
+,com.example.customer_service.dto.AuthRequestH

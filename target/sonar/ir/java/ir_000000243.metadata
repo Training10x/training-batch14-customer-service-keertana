@@ -1,0 +1,9 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#updateCustomerStatus(Ljava/lang/Long;Ljava/lang/String;)Z
+false
+0dcd5eb615bae2d9f39212fddfe64726
+java.util.Optional#get()Ljava/lang/Object;
+java.util.Optional#isEmpty()Z
+==
+!unknownMethod! !unknownMethod!
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;

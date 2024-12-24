@@ -1,0 +1,122 @@
+
+§com.example.customer_service.service.impl.CustomUserDetailsService#loadUserByUsername(Ljava/lang/String;)Lorg/springframework/security/core/userdetails/UserDetails;
+uC:/Users/psaik/customer_service/src/main/java/com/example/customer_service/service/impl/CustomUserDetailsService.java ()"startingBlock*ä
+startingBlock) (7ç
+ä
+ (
+%12"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*7
+
+__unknown_file (
+
+emailjava.lang.StringZ
+X
+1 (6
+emailjava.lang.String"__annotation*#
+
+__unknown_file (
+
+%12*
+1*„
+1 (.—
+Œ
+ (.@
+%0:com.example.customer_service.repository.CustomerRepository"__id*z
+
+__unknown_file (^*\D
+Bcom.example.customer_service.service.impl.CustomUserDetailsService"
+customerRepository—Œ
+ (A
+%1java.util.Optional"ncom.example.customer_service.repository.CustomerRepository#findByEmail(Ljava/lang/String;)Ljava/util/Optional;*^
+
+__unknown_file (B
+@
+%0:com.example.customer_service.repository.CustomerRepository*7
+
+__unknown_file (
+
+emailjava.lang.String2findByEmail(Ljava/lang/String;)∏
+µ
+ (V!
+%2java.util.function.Supplier"__declareFunction*s
+
+__unknown_file (WU
+S__sonar_lambda_3$com.example.customer_service.service.impl.CustomUserDetailsService∑¥
+ (W2
+%5,com.example.customer_service.entity.Customer"Ojava.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;*6
+
+__unknown_file (
+
+%1java.util.Optional*?
+
+__unknown_file (#
+!
+%2java.util.function.Supplier2*orElseThrow(Ljava/util/function/Supplier;)ü
+ú
+ (X8
+customer,com.example.customer_service.entity.Customer"__id*P
+
+__unknown_file (4
+2
+%5,com.example.customer_service.entity.Customer]
+[
+E (a
+%6"__calculate*
+M (N
++*
+E (L	
+ROLE_*
+O (a
+""õò
+. (DH
+%7Borg.springframework.security.core.authority.SimpleGrantedAuthority"Borg.springframework.security.core.authority.SimpleGrantedAuthorityˇ
+¸
+* (b
+%8"^org.springframework.security.core.authority.SimpleGrantedAuthority#<init>(Ljava/lang/String;)V*f
+
+__unknown_file (J
+H
+%7Borg.springframework.security.core.authority.SimpleGrantedAuthority*"
+
+__unknown_file (
+
+%6˚
+¯
+ (	
+%9"Gjava.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;*5
+
+__unknown_file ("
+java.util.Collections*f
+
+__unknown_file (J
+H
+%7Borg.springframework.security.core.authority.SimpleGrantedAuthority{y
+ (E9
+%102org.springframework.security.core.userdetails.User"2org.springframework.security.core.userdetails.User—
+Œ
+ (
+
+%11"vorg.springframework.security.core.userdetails.User#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection;)V*W
+
+__unknown_file (;
+9
+%102org.springframework.security.core.userdetails.User*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+
+%9"G
+ (;
+9
+%102org.springframework.security.core.userdetails.User:%
+* (6
+emailjava.lang.StringBFD
+Bcom.example.customer_service.service.impl.CustomUserDetailsServiceH

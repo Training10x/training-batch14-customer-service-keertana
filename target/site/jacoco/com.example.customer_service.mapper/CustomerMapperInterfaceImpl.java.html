@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerMapperInterfaceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">customer_service</a> &gt; <a href="index.source.html" class="el_package">com.example.customer_service.mapper</a> &gt; <span class="el_source">CustomerMapperInterfaceImpl.java</span></div><h1>CustomerMapperInterfaceImpl.java</h1><pre class="source lang-java linenums">package com.example.customer_service.mapper;
+
+import com.example.customer_service.dto.CustomerDTO;
+import com.example.customer_service.entity.Customer;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2024-12-24T14:58:54-0500&quot;,
+    comments = &quot;version: 1.5.5.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)&quot;
+)
+@Component
+<span class="fc" id="L14">public class CustomerMapperInterfaceImpl implements CustomerMapperInterface {</span>
+
+    @Override
+    public Customer toEntity(CustomerDTO customerDTO) {
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if ( customerDTO == null ) {</span>
+<span class="nc" id="L19">            return null;</span>
+        }
+
+<span class="fc" id="L22">        Customer customer = new Customer();</span>
+
+<span class="fc" id="L24">        customer.setId( customerDTO.getId() );</span>
+<span class="fc" id="L25">        customer.setName( customerDTO.getName() );</span>
+<span class="fc" id="L26">        customer.setIndustry( customerDTO.getIndustry() );</span>
+<span class="fc" id="L27">        customer.setCompanySize( customerDTO.getCompanySize() );</span>
+<span class="fc" id="L28">        customer.setEmail( customerDTO.getEmail() );</span>
+<span class="fc" id="L29">        customer.setPhoneNumber( customerDTO.getPhoneNumber() );</span>
+<span class="fc" id="L30">        customer.setAddress( customerDTO.getAddress() );</span>
+<span class="fc" id="L31">        customer.setStatus( customerDTO.getStatus() );</span>
+<span class="fc" id="L32">        customer.setRole( customerDTO.getRole() );</span>
+<span class="fc" id="L33">        customer.setPassword( customerDTO.getPassword() );</span>
+
+<span class="fc" id="L35">        return customer;</span>
+    }
+
+    @Override
+    public CustomerDTO toDto(Customer customer) {
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if ( customer == null ) {</span>
+<span class="nc" id="L41">            return null;</span>
+        }
+
+<span class="fc" id="L44">        CustomerDTO customerDTO = new CustomerDTO();</span>
+
+<span class="fc" id="L46">        customerDTO.setId( customer.getId() );</span>
+<span class="fc" id="L47">        customerDTO.setName( customer.getName() );</span>
+<span class="fc" id="L48">        customerDTO.setIndustry( customer.getIndustry() );</span>
+<span class="fc" id="L49">        customerDTO.setCompanySize( customer.getCompanySize() );</span>
+<span class="fc" id="L50">        customerDTO.setEmail( customer.getEmail() );</span>
+<span class="fc" id="L51">        customerDTO.setPhoneNumber( customer.getPhoneNumber() );</span>
+<span class="fc" id="L52">        customerDTO.setAddress( customer.getAddress() );</span>
+<span class="fc" id="L53">        customerDTO.setStatus( customer.getStatus() );</span>
+<span class="fc" id="L54">        customerDTO.setRole( customer.getRole() );</span>
+<span class="fc" id="L55">        customerDTO.setPassword( customer.getPassword() );</span>
+
+<span class="fc" id="L57">        return customerDTO;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

@@ -1,0 +1,8 @@
+com.example.customer_service.security.SecurityConfig#authenticationManager(Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;)Lorg/springframework/security/authentication/AuthenticationManager;
+false
+a77241a5027b4d04f37612303b422890
+org.springframework.security.config.annotation.AbstractSecurityBuilder#build()Ljava/lang/Object;
+==
+authenticationProvider com.example.customer_service.security.SecurityConfig#authenticationProvider()Lorg/springframework/security/authentication/dao/DaoAuthenticationProvider;
+authenticationProvider org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder#authenticationProvider(Lorg/springframework/security/authentication/AuthenticationProvider;)Lorg/springframework/security/config/annotation/authentication/builders/AuthenticationManagerBuilder;
+getSharedObject org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder#getSharedObject(Ljava/lang/Class;)Ljava/lang/Object;

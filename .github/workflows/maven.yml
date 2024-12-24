@@ -2,11 +2,9 @@ name: Customer Service CI/CD Workflow
 
 on:
   push:
-    branches:
-      - "main"
+    branches: ["main", "feature/*","branchdev","releasebranch","hotfix"]
   pull_request:
-    branches:
-      - "main"
+    branches: ["main", "feature/*","branchdev","releasebranch","hotfix"]
 
 permissions:
   contents: write
@@ -14,49 +12,29 @@ permissions:
 
 jobs:
   build:
+    name: Build Project
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: Kittu@542
+          POSTGRES_DB: customer_service_db
+        ports:
+          - 5433:5433
+        options: --health-cmd="pg_isready -U postgres" --health-interval=10s --health-timeout=5s --health-retries=5
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
+          java-version: 17
+          distribution: temurin
 
       - name: Build with Maven
-        working-directory: customer_service/customer_service
         run: mvn clean install
 
-      - name: Run Tests
-        working-directory: customer_service/customer_service
-        run: mvn test
-
-      - name: Code Quality Analysis
-        working-directory: customer_service/customer_service
-        run: mvn sonar:sonar
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      - name: Generate Code Coverage Report
-        working-directory: customer_service/customer_service
-        run: mvn test jacoco:report
-
-      - name: Build & Push Docker Image
-        working-directory: customer_service/customer_service
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: keertanapadmanabham/customer-service-image
-          tags: latest
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Publish to Maven Repository
-        working-directory: customer_service/customer_service
-        run: mvn deploy
-        env:
-          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}

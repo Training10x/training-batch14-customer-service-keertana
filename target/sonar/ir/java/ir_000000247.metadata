@@ -1,0 +1,7 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#isCustomerOwnedByEmail(Ljava/lang/Long;Ljava/lang/String;)Z
+false
+b190e9b968476a1efad9b9d4138ebfd1
+java.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;
+==
+!unknownMethod! !unknownMethod!
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;
