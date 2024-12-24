@@ -9,6 +9,7 @@ import com.example.customer_service.repository.CustomerRepository;
 import com.example.customer_service.service.impl.CustomerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -16,6 +17,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Collections;
@@ -36,6 +38,10 @@ class CustomerServiceImplTest {
 
     @Mock
     private CustomerMapperInterface customerMapper;
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
 
     @InjectMocks
     private CustomerServiceImpl customerServiceImpl;
@@ -93,30 +99,33 @@ class CustomerServiceImplTest {
         CustomerDTO customerDTO = new CustomerDTO();
         customerDTO.setEmail("unique@example.com");
         customerDTO.setPhoneNumber("1234567890");
+        customerDTO.setPassword("rawPassword");
 
         Customer customer = new Customer();
         customer.setEmail("unique@example.com");
+        customer.setPhoneNumber("1234567890");
+        customer.setPassword("encodedPassword");
 
-        when(customerRepository.findByEmail("unique@example.com"))
-                .thenReturn(Optional.empty());
-        when(customerRepository.findByPhoneNumber("1234567890"))
-                .thenReturn(Optional.empty());
-        when(customerMapper.toEntity(customerDTO))
-                .thenReturn(customer);
-        when(customerRepository.save(customer))
-                .thenReturn(customer);
-        when(customerMapper.toDto(customer))
-                .thenReturn(customerDTO);
+        when(customerRepository.findByEmail("unique@example.com")).thenReturn(Optional.empty());
+        when(customerRepository.findByPhoneNumber("1234567890")).thenReturn(Optional.empty());
+        when(customerMapper.toEntity(customerDTO)).thenReturn(customer);
+        when(passwordEncoder.encode(any(CharSequence.class))).thenReturn("encodedPassword");
+        when(customerRepository.save(customer)).thenReturn(customer);
+        when(customerMapper.toDto(customer)).thenReturn(customerDTO);
 
         // Act
         CustomerDTO result = customerServiceImpl.createCustomer(customerDTO);
 
         // Assert
-        assertEquals(customerDTO, result);
+        assertNotNull(result, "Result should not be null");
+        assertEquals(customerDTO, result, "Expected DTO should match the result");
         verify(customerRepository, times(1)).findByEmail("unique@example.com");
         verify(customerRepository, times(1)).findByPhoneNumber("1234567890");
         verify(customerRepository, times(1)).save(customer);
+        verify(passwordEncoder, times(1)).encode("rawPassword");
     }
+
+
 
     @Test
     void isEmailDuplicate_shouldReturnTrueWhenEmailExists() {
@@ -729,6 +738,7 @@ class CustomerServiceImplTest {
     }
     @Test
     void testIsCustomerOwnedByEmail_CustomerExistsAndEmailMatches() {
+        // Arrange
         Long customerId = 1L;
         String currentUserEmail = "test@example.com";
 
@@ -738,9 +748,51 @@ class CustomerServiceImplTest {
 
         when(customerRepository.findById(customerId)).thenReturn(Optional.of(customer));
 
-        boolean result = customerService.isCustomerOwnedByEmail(customerId, currentUserEmail);
+        // Act
+        boolean result = customerServiceImpl.isCustomerOwnedByEmail(customerId, currentUserEmail);
 
+        // Assert
         assertTrue(result, "Expected to return true when customer exists and email matches");
+        verify(customerRepository, times(1)).findById(customerId);
+    }
+
+    @Test
+    void saveCustomer_shouldSaveCustomerSuccessfully() {
+        // Arrange
+        CustomerDTO customerDTO = new CustomerDTO();
+        customerDTO.setEmail("test@example.com");
+        customerDTO.setPhoneNumber("1234567890");
+        customerDTO.setAddress("123 Main Street");
+        customerDTO.setStatus("Active");
+        customerDTO.setRole("User");
+        customerDTO.setPassword("rawPassword");
+
+        Customer customer = new Customer();
+        customer.setEmail("test@example.com");
+        customer.setPhoneNumber("1234567890");
+        customer.setAddress("123 Main Street");
+        customer.setStatus("Active");
+        customer.setRole("User");
+        customer.setPassword("encodedPassword");
+
+        when(passwordEncoder.encode("rawPassword")).thenReturn("encodedPassword");
+        when(customerRepository.save(any(Customer.class))).thenReturn(customer);
+
+        // Act
+        customerServiceImpl.saveCustomer(customerDTO);
+
+        // Assert
+        ArgumentCaptor<Customer> customerCaptor = ArgumentCaptor.forClass(Customer.class);
+        verify(customerRepository, times(1)).save(customerCaptor.capture());
+
+        Customer capturedCustomer = customerCaptor.getValue();
+        assertNotNull(capturedCustomer, "Customer should not be null");
+        assertEquals("test@example.com", capturedCustomer.getEmail(), "Email should match");
+        assertEquals("1234567890", capturedCustomer.getPhoneNumber(), "Phone number should match");
+        assertEquals("123 Main Street", capturedCustomer.getAddress(), "Address should match");
+        assertEquals("Active", capturedCustomer.getStatus(), "Status should match");
+        assertEquals("User", capturedCustomer.getRole(), "Role should match");
+        assertEquals("encodedPassword", capturedCustomer.getPassword(), "Password should be encoded");
     }
 
 
