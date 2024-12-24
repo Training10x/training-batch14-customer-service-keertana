@@ -1,0 +1,41 @@
+name: Customer Service CI/CD Workflow
+
+on:
+  push:
+    branches: ["main", "feature/*","branchdev","releasebranch","hotfix"]
+  pull_request:
+    branches: ["main", "feature/*","branchdev","releasebranch","hotfix"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build Project
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: Kittu@542
+          POSTGRES_DB: customer_service_db
+        ports:
+          - 5433:5433
+        options: --health-cmd="pg_isready -U postgres" --health-interval=10s --health-timeout=5s --health-retries=5
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Build with Maven
+        run: mvn clean install
+
