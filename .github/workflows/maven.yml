@@ -5,6 +5,8 @@ on:
     branches: ["main", "feature/sprint4","branchdev","releasebranch","hotfix"]
   pull_request:
     branches: ["main", "feature/sprint4","branchdev","releasebranch","hotfix"]
+  workflow_dispatch:
+
 
 permissions:
   contents: write
