@@ -55,3 +55,7 @@ jobs:
         run: mvn clean install
       - name: Run Tests
         run: mvn test
+      - name: Code Quality Analysis
+        run: mvn sonar:sonar
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
