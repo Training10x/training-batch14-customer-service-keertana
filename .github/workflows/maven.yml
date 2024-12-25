@@ -56,6 +56,6 @@ jobs:
       - name: Run Tests
         run: mvn test
       - name: Code Quality Analysis
-        run: mvn sonar:sonar
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=padmanabhamsaikeertana_customer-service-app
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
