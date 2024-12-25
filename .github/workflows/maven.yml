@@ -92,6 +92,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
@@ -102,25 +107,4 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=padmanabhamsaikeertana_customer-service-app
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  Code-Coverage:
-    name: Code Coverage
-    needs: Code-Quality
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: 17
-          distribution: temurin
-
-      - name: Generate JaCoCo Coverage Report
-        run: mvn verify
-        
-      - name: Upload JaCoCo Coverage Report as Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: jacoco-report
-          path: target/site/jacoco/jacoco.xml
+  
