@@ -99,7 +99,7 @@ jobs:
           distribution: temurin
 
       - name: Code Quality Analysis
-        run: mvn sonar:sonar
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=padmanabhamsaikeertana_customer-service-app
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   Code-Coverage:
@@ -116,5 +116,11 @@ jobs:
           java-version: 17
           distribution: temurin
 
-      - name: Generate Code Coverage Report
-        run: mvn test jacoco:report
+      - name: Generate JaCoCo Coverage Report
+        run: mvn verify
+        
+      - name: Upload JaCoCo Coverage Report as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/jacoco.xml
