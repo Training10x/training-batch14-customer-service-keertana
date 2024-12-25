@@ -40,10 +40,6 @@ jobs:
           --health-timeout=5s
           --health-retries=5
 
-    steps:
-      - name: Verify PostgreSQL Service Health
-        run: docker exec postgres pg_isready -U postgres
-
   build-project:
     name: Build Project
     runs-on: ubuntu-latest
