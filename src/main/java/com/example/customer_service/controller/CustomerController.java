@@ -3,9 +3,10 @@ package com.example.customer_service.controller;
 import com.example.customer_service.dto.CustomerDTO;
 import com.example.customer_service.dto.SearchCriteria;
 import com.example.customer_service.entity.Customer;
+import com.example.customer_service.kafka.CustomerConsumerService;
+import com.example.customer_service.kafka.CustomerProducerService;
 import com.example.customer_service.repository.CustomerRepository;
 import com.example.customer_service.service.CustomerService;
-import com.example.customer_service.service.impl.KafkaProducerService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,8 @@ import java.util.Map;
 public class CustomerController {
     private final CustomerService customerService;
     private final CustomerRepository customerRepository;
-    private final KafkaProducerService producerService;
+    private final CustomerConsumerService customerConsumerService;
+    private final CustomerProducerService customerProducerService;
 
 
     private static final String MESSAGE = "message";
@@ -32,10 +34,12 @@ public class CustomerController {
 
     public CustomerController(CustomerService customerService,
                               CustomerRepository customerRepository,
-                              KafkaProducerService producerService) {
+                              CustomerProducerService customerProducerService,
+                              CustomerConsumerService customerConsumerService) {
         this.customerService = customerService;
         this.customerRepository = customerRepository;
-        this.producerService = producerService;
+        this.customerConsumerService = customerConsumerService;
+        this.customerProducerService = customerProducerService;
     }
 
     public ResponseEntity<Map<String, Object>> buildResponse(HttpStatus status, String message) {
@@ -182,10 +186,10 @@ public class CustomerController {
         return buildResponse(HttpStatus.OK, "Customer updated successfully");
     }
 
-    @PostMapping("/send")
-    public ResponseEntity<String> sendMessage(@RequestParam String message) {
-        String topic = "candidate-topic"; // Kafka topic name
-        producerService.sendMessage(topic, message);
-        return ResponseEntity.ok("Message sent to Kafka topic: " + topic + " | Message: " + message);
+     @GetMapping("/send/{customerId}")
+    public ResponseEntity<String> sendCustomerId(@PathVariable Long customerId) {
+        customerProducerService.sendCustomerId(customerId);
+        return ResponseEntity.ok("Customer ID sent to Kafka: " + customerId);
     }
+
 }
