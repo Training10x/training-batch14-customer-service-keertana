@@ -1,0 +1,8 @@
+com.example.customer_service.controller.CustomerController#getCustomerById(Ljava/lang/Long;)Lorg/springframework/http/ResponseEntity;
+false
+b399c18bea7ea5c0a26a2bf99407183b
+java.util.Map#of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+org.springframework.http.ResponseEntity#<init>(Ljava/lang/Object;Lorg/springframework/http/HttpStatusCode;)V
+org.springframework.http.ResponseEntity#instance-init#
+==
+getCustomerById com.example.customer_service.service.CustomerService#getCustomerById(Ljava/lang/Long;)Lcom/example/customer_service/entity/Customer;

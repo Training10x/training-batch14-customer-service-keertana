@@ -1,0 +1,8 @@
+com.example.customer_service.exception.GlobalExceptionHandler#handleServiceUnavailable(Ljavax/naming/ServiceUnavailableException;)Lorg/springframework/http/ResponseEntity;
+false
+bedaf5f3653d073b89dcb3422d680546
+java.util.Map#of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+org.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;
+==
+body org.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
+getMessage java.lang.Throwable#getMessage()Ljava/lang/String;

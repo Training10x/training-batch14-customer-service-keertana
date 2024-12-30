@@ -1,0 +1,3 @@
+com.example.customer_service.controller.CustomerController#<init>(Lcom/example/customer_service/service/CustomerService;Lcom/example/customer_service/repository/CustomerRepository;Lcom/example/customer_service/service/impl/KafkaProducerService;)V
+false
+ffa87e54c075bc79d44ae8f9c6d34972

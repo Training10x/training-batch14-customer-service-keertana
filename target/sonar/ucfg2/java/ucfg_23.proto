@@ -1,0 +1,109 @@
+
+ycom.example.customer_service.service.impl.CustomerServiceImpl#isCustomerOwnedByEmail(Ljava/lang/Long;Ljava/lang/String;)Z|
+pC:/Users/psaik/customer_service/src/main/java/com/example/customer_service/service/impl/CustomerServiceImpl.java± ±()"startingBlock*ò
+startingBlock
+±) ±(Së
+é
+
+∞ ∞(
+%5"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*:
+
+__unknown_file (
+
+
+customerIdjava.lang.Long^
+\
+
+±/ ±(9
+
+customerIdjava.lang.Long"__annotation*"
+
+__unknown_file (
+
+%5ô
+ñ
+
+∞ ∞(
+%6"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*B
+
+__unknown_file (&
+$
+currentUserEmailjava.lang.Stringf
+d
+
+±B ±(R$
+currentUserEmailjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6*
+1*ú	
+1
+≤ ≤(!Œ
+À
+
+≤ ≤(!@
+%0:com.example.customer_service.repository.CustomerRepository"__id*u
+
+__unknown_file (Y*W?
+=com.example.customer_service.service.impl.CustomerServiceImpl"
+customerRepository»≈
+
+≤ ≤(6
+%1java.util.Optional"corg.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;*^
+
+__unknown_file (B
+@
+%0:com.example.customer_service.repository.CustomerRepository*:
+
+__unknown_file (
+
+
+customerIdjava.lang.Long2findById(Ljava/lang/Object;)µ
+≤
+
+≥ ≥(V!
+%2java.util.function.Function"__declareFunction*n
+
+__unknown_file (RP
+N__sonar_lambda_2$com.example.customer_service.service.impl.CustomerServiceImpl†
+ù
+
+__unknown_file (7
+!
+%2java.util.function.Function"
+currentUserEmail"__id*B
+
+__unknown_file (&
+$
+currentUserEmailjava.lang.String˝˙
+
+≤ ≥(W
+%4"Ijava.util.Optional#map(Ljava/util/function/Function;)Ljava/util/Optional;*6
+
+__unknown_file (
+
+%1java.util.Optional*?
+
+__unknown_file (#
+!
+%2java.util.function.Function2"map(Ljava/util/function/Function;)"
+
+≤ ¥(
+"":*
+
+±* ±(:
+
+customerIdjava.lang.Long:2
+
+±; ±(R$
+currentUserEmailjava.lang.StringBA?
+=com.example.customer_service.service.impl.CustomerServiceImplHX

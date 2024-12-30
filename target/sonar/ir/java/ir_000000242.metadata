@@ -1,0 +1,6 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#customerExists(Ljava/lang/Long;)Z
+false
+99eaa797b4e01d8ea4c11b145e26e91a
+java.util.Optional#isPresent()Z
+==
+findById org.springframework.data.repository.CrudRepository#findById(Ljava/lang/Object;)Ljava/util/Optional;

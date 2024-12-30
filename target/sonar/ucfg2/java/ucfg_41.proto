@@ -1,0 +1,16 @@
+
+E__sonar_lambda_4$com.example.customer_service.security.SecurityConfigq
+gC:/Users/psaik/customer_service/src/main/java/com/example/customer_service/security/SecurityConfig.java/ /(,"1*õ
+1/ /("‡„
+/ /(,N
+%1Horg.springframework.security.config.annotation.web.builders.HttpSecurity"§org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer#disable()Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;*s
+
+__unknown_file (W
+U
+csrfMorg.springframework.security.config.annotation.web.configurers.CsrfConfigurer2	disable()"\
+/ /(,P
+N
+%1Horg.springframework.security.config.annotation.web.builders.HttpSecurity:a
+/ /(U
+csrfMorg.springframework.security.config.annotation.web.configurers.CsrfConfigurerB20
+.org.springframework.security.config.Customizer

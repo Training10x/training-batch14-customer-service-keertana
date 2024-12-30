@@ -1,0 +1,12 @@
+com.example.customer_service.service.impl.CustomUserDetailsService#loadUserByUsername(Ljava/lang/String;)Lorg/springframework/security/core/userdetails/UserDetails;
+false
+d7f7a029c2a7930e744a1ddcfb1c67c6
+java.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+org.springframework.security.core.authority.SimpleGrantedAuthority#<init>(Ljava/lang/String;)V
+org.springframework.security.core.authority.SimpleGrantedAuthority#instance-init#
+org.springframework.security.core.userdetails.User#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection;)V
+org.springframework.security.core.userdetails.User#instance-init#
+==
+!unknownMethod! !unknownMethod!
+findByEmail com.example.customer_service.repository.CustomerRepository#findByEmail(Ljava/lang/String;)Ljava/util/Optional;

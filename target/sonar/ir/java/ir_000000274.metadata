@@ -1,0 +1,9 @@
+com.example.customer_service.security.SecurityConfig#authenticationProvider()Lorg/springframework/security/authentication/dao/DaoAuthenticationProvider;
+false
+9d626d58a77fd73c2913ade561a1a980
+org.springframework.security.authentication.dao.DaoAuthenticationProvider#<init>()V
+org.springframework.security.authentication.dao.DaoAuthenticationProvider#instance-init#
+==
+passwordEncoder com.example.customer_service.security.SecurityConfig#passwordEncoder()Lorg/springframework/security/crypto/password/PasswordEncoder;
+setPasswordEncoder org.springframework.security.authentication.dao.DaoAuthenticationProvider#setPasswordEncoder(Lorg/springframework/security/crypto/password/PasswordEncoder;)V
+setUserDetailsService org.springframework.security.authentication.dao.DaoAuthenticationProvider#setUserDetailsService(Lorg/springframework/security/core/userdetails/UserDetailsService;)V

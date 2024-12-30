@@ -1,0 +1,6 @@
+com.example.customer_service.service.impl.KafkaProducerService#sendMessage(Ljava/lang/String;Ljava/lang/String;)V
+false
+9a2f9e5a4ecf1b522272d644493172f4
+==
+info org.slf4j.Logger#info(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+send org.springframework.kafka.core.KafkaTemplate#send(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/concurrent/CompletableFuture;

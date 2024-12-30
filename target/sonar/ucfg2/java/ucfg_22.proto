@@ -1,0 +1,38 @@
+
+N__sonar_lambda_2$com.example.customer_service.service.impl.CustomerServiceImpl|
+pC:/Users/psaik/customer_service/src/main/java/com/example/customer_service/service/impl/CustomerServiceImpl.java³ ³(V"startingBlock*á
+startingBlock
+³ ³(V¾
+»
+
+__unknown_file ($
+currentUserEmailjava.lang.String"__id*s
+
+__unknown_file (W*U?
+=com.example.customer_service.service.impl.CustomerServiceImpl"
+currentUserEmail*
+1*™
+1
+³! ³((ñ
+î
+
+³! ³(V
+%3"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*"
+
+__unknown_file (
+""*B
+
+__unknown_file (&
+$
+currentUserEmailjava.lang.String"
+
+³! ³(V
+
+%3:F
+
+³ ³(8
+customer,com.example.customer_service.entity.CustomerB
+java.util.function.Function

@@ -1,0 +1,6 @@
+com.example.customer_service.controller.CustomerController#sendMessage(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;
+false
+556268f33ec3f8b7e50a077860b50337
+org.springframework.http.ResponseEntity#ok(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;
+==
+sendMessage com.example.customer_service.service.impl.KafkaProducerService#sendMessage(Ljava/lang/String;Ljava/lang/String;)V

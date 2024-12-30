@@ -1,0 +1,8 @@
+com.example.customer_service.controller.CustomerController#getAllCustomers()Lorg/springframework/http/ResponseEntity;
+false
+78d11dd306f396c624c33b86f245e25e
+java.util.Map#of(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+org.springframework.http.ResponseEntity#<init>(Ljava/lang/Object;Lorg/springframework/http/HttpStatusCode;)V
+org.springframework.http.ResponseEntity#instance-init#
+==
+findAllCustomers com.example.customer_service.service.CustomerService#findAllCustomers()Ljava/util/List;

@@ -1,0 +1,13 @@
+com.example.customer_service.service.impl.CustomerServiceImpl#createCustomer(Lcom/example/customer_service/dto/CustomerDTO;)Lcom/example/customer_service/dto/CustomerDTO;
+false
+425a13d98d8b4992e46f19fff7e137cb
+com.example.customer_service.exception.DuplicateResourceException#<init>(Ljava/lang/String;)V
+com.example.customer_service.exception.DuplicateResourceException#instance-init#
+==
+!unknownMethod! !unknownMethod!
+encode org.springframework.security.crypto.password.PasswordEncoder#encode(Ljava/lang/CharSequence;)Ljava/lang/String;
+findByEmail com.example.customer_service.repository.CustomerRepository#findByEmail(Ljava/lang/String;)Ljava/util/Optional;
+findByPhoneNumber com.example.customer_service.repository.CustomerRepository#findByPhoneNumber(Ljava/lang/String;)Ljava/util/Optional;
+save org.springframework.data.repository.CrudRepository#save(Ljava/lang/Object;)Ljava/lang/Object;
+toDto com.example.customer_service.mapper.CustomerMapperInterface#toDto(Lcom/example/customer_service/entity/Customer;)Lcom/example/customer_service/dto/CustomerDTO;
+toEntity com.example.customer_service.mapper.CustomerMapperInterface#toEntity(Lcom/example/customer_service/dto/CustomerDTO;)Lcom/example/customer_service/entity/Customer;
